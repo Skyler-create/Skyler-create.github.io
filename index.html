@@ -82,8 +82,8 @@
         mdi-social-poll
         mdi-av-equalizer
         -->
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
+        <a aria-label="Navigate to the Skills section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-assessment small"></i><span>Projects</span></a>
       </li>
 
       <li class="bold">
@@ -148,8 +148,8 @@
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
+        <a aria-label="Navigate to the Skills section" href="#projects" class="waves-effect waves-dark teal-text"><i
+            class="mdi-action-assessment small"></i><span>Projects</span></a>
       </li>
 
       <li class="bold">
@@ -422,51 +422,174 @@ Currently, I’m seeking a Summer 2025 internship where I can apply my technical
             <span>July 2018 - May 2023 | Taipei, Taiwan</span>
           </div>
         </div>
+    </section>
 
-    <!-- Fifth Section: Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Skills</h3>
+    <!-- Fourth Section: Projects -->
+    <section id="projects" class="section scrollspy">
+      <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
-        <!-- Languages and Databases -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Languages and Tools</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
+        <div class="row">
+
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="music streaming app" src="/assets/img/project-music-player.png" style="height: 100%; width: 100%" class="activator" />
               </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/java.png" class="responsive-img" />Java
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">AI-Enhanced Guitar Effects Pedal<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  An AI model that listens to guitar tone and replicates it
+                </p>
               </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/C.png" class="responsive-img" />C
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/C++.png" class="responsive-img" />C++
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/html5-300x300.jpg" class="responsive-img" />HTML5
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/css3-300x300.jpg" class="responsive-img" />CSS3
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/kicad (1).png" class="responsive-img" />KiCad
-            
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/postgresql-logo.png" class="responsive-img" />FastX
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/shell-logo-1-300x300.jpg" class="responsive-img" />Shell Scripting
+              <div class="card-reveal">
+                <!-- TODO: change this -- only close button -->
+                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <span class="card-title grey-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Python, Raspberry Pi, Audio DSP, ML (OpenL3, MFCC, CNN), Real-time signal routing.</li>
+                  <li>Uses ML models trained on MFCCs and OpenL3 embeddings to detect effects and estimate knob settings.</li>
+                  <li>Enables real-time tone matching by comparing live input to reference audio clips.</li>
+                  <li>Built as a smart pedal that adapts tone automatically for performance or recording.</li>
+
+
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit " href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader" target="_blank" data-position="top"
+                    data-tooltip="View Online"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-external-link"></i></a>
+                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="quiz app" src="/assets/img/project-quizup-logo-1.png" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">FPGA SD Card Reader<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  SPI interfaced Micro-SD Card Reader for FPGA
+                </p>
+              </div>
+              <div class="card-reveal">
+                <!-- TODO: change this -- only close button -->
+                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <span class="card-title grey-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> SystemVerilog, Xilinx Vivado, SPI, BRAM, HDMI, VGA, Filters.</li>
+                  <li>Reads RAW images from an SD card and stores pixel data in BRAM using SPI.</li>
+                  <li>Displays images in real time via HDMI with a custom VGA controller.</li>
+                  <li>Demonstrates complete image processing pipeline on an FPGA without a CPU.</li>
+
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit " href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader" target="_blank" data-position="top"
+                    data-tooltip="View Online"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-external-link"></i></a>
+                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Flask Project -->
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="Screenshot of web app" src="/assets/img/project-blog-logo.jpg"
+                style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">Wireless Guitar System<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  A RF-based wireless guitar transmitter and receiver system.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <!-- TODO: change this -- only close button -->
+                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <span class="card-title teal-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Analog/Digital Circuit Design, Op-Amps, ADC, DAC, RF Modules, KiCad, Signal Integrity</li>
+                  <li>Designed ADC-to-RF transmitter and RF-to-DAC receiver.</li>
+                  <li>Built and tested custom PCB with clean analog routing.</li>
+                  <li>Created a plug-and-play wireless guitar setup.</li>
+
+
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit Blog website" href="https://github.com/Skyler-create" target="_blank" data-position="top"
+                    data-tooltip="View Online"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-external-link"></i></a>
+                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/Skyler-create"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VQA -->
+          <div class="col s12 m6 l4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="Screenshot of  web app" src="/assets/img/project-aim_bert-bias.png" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">Distortion Guitar Pedal<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  Self-designed distortion guitar pedal.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <!-- TODO: change this -- only close button -->
+                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
+                <span class="card-title teal-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools: </b>Op-Amps (TL072), Clipping Diodes (LED, Germanium, Schottky), Tone Stack Design, KiCad</li>
+                  <li>Designed op-amp gain stages with tone controls.</li>
+                  <li>Tuned filters to reduce noise and shape sound.</li>
+                  <li>Produced a flexible analog distortion effect.</li>
+
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit the GitHub repo for  project"
+                    href="https://github.com/Skyler-create" target="_blank"
+                    data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ************* -->
         </div>
-
-        
-
-
+      </div>
+    </section>
     
     <!-- Eight Section: Contact -->
     <section id="contact" class="section scrollspy">
