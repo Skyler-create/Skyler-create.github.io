@@ -1,10 +1,19 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skyler Lang — Computer Engineer</title>
+  <meta name="description"
+    content="Skyler Lang — Computer Engineering @ UIUC '27. I build digital twins of AI compute clusters, factory-floor computer vision, FPGAs, and the occasional guitar pedal. Open to full-time roles starting 2027." />
+  <meta name="author" content="Skyler Lang" />
+  <meta property="og:title" content="Skyler Lang — Computer Engineer" />
+  <meta property="og:description"
+    content="Network automation, embedded systems, and applied ML. UIUC Computer Engineering, class of 2027." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://skyler-create.github.io/" />
+  <link rel="icon" type="image/png" href="/assets/img/fav-icon.png" />
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -17,751 +26,1044 @@
     })(window, document, 'script', 'dataLayer', 'GTM-PGZH8HT');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles-->
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <title>Skyler Lang's Personal Website</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/assets/img/fav-icon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg2: #0e141b;
+      --surface: #121924;
+      --surface2: #17202d;
+      --line: #1e2836;
+      --line2: #2a3648;
+      --text: #dce5f0;
+      --muted: #8b9bb0;
+      --faint: #5c6b80;
+      --accent: #57e6a9;
+      --accent-dim: rgba(87, 230, 169, 0.12);
+      --amber: #ffc857;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --disp: "Space Grotesk", "Inter", sans-serif;
+      --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    gtag('config', 'UA-126939217-2');
-  </script>
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 16.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(ellipse 900px 500px at 75% -5%, rgba(87, 230, 169, 0.06), transparent),
+        radial-gradient(circle at 1px 1px, rgba(139, 155, 176, 0.07) 1px, transparent 0);
+      background-size: 100% 100%, 34px 34px;
+    }
+
+    ::selection { background: rgba(87, 230, 169, 0.28); color: #eafff5; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .mono { font-family: var(--mono); }
+
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
+
+    /* ---------- Nav ---------- */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(11, 15, 20, 0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      max-width: 1060px; margin: 0 auto; padding: 0 28px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--text);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .logo:hover { text-decoration: none; }
+    .logo .prompt { color: var(--accent); }
+    .logo .cursor-block {
+      display: inline-block; width: 8px; height: 16px; background: var(--accent);
+      animation: blink 1.1s steps(1) infinite; vertical-align: -2px;
+    }
+
+    nav.links { display: flex; align-items: center; gap: 26px; }
+    nav.links a {
+      font-family: var(--mono); font-size: 13.5px; color: var(--muted);
+      transition: color .15s;
+    }
+    nav.links a:hover { color: var(--text); text-decoration: none; }
+    nav.links a.active { color: var(--accent); }
+    nav.links a .idx { color: var(--faint); font-size: 11px; margin-right: 3px; }
+    nav.links a.active .idx { color: var(--accent); }
+
+    .resume-btn {
+      font-family: var(--mono); font-size: 13.5px; font-weight: 600;
+      color: var(--accent) !important; border: 1px solid rgba(87, 230, 169, 0.45);
+      padding: 7px 16px; border-radius: 8px; transition: background .15s, transform .15s;
+    }
+    .resume-btn:hover { background: var(--accent-dim); text-decoration: none !important; }
+
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer; padding: 8px;
+      color: var(--text); font-size: 22px; line-height: 1;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 100svh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: 64px;
+    }
+
+    #fabric {
+      position: absolute; top: 0; right: 0; height: 100%; width: 52%;
+      pointer-events: none; opacity: 0.85;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+      mask-image: linear-gradient(to right, transparent, black 30%);
+    }
+
+    .hero-inner { position: relative; z-index: 2; max-width: 1060px; margin: 0 auto; padding: 60px 28px; width: 100%; }
+
+    .kicker {
+      font-family: var(--mono); font-size: 14px; color: var(--muted); margin-bottom: 22px;
+    }
+    .kicker .prompt { color: var(--accent); }
+    .kicker .out { color: var(--text); }
+
+    h1 {
+      font-family: var(--disp); font-size: clamp(38px, 6vw, 62px);
+      font-weight: 700; line-height: 1.08; letter-spacing: -0.02em;
+      max-width: 700px; margin-bottom: 24px;
+    }
+    h1 .hl { color: var(--accent); }
+
+    .typeline {
+      font-family: var(--mono); font-size: 15px; color: var(--muted); margin-bottom: 26px;
+    }
+    .typeline .typed { color: var(--amber); }
+    .typeline .caret {
+      display: inline-block; width: 8px; height: 15px; background: var(--amber);
+      vertical-align: -2px; animation: blink 1.1s steps(1) infinite;
+    }
+
+    .hero-sub { max-width: 620px; color: var(--muted); font-size: 17.5px; margin-bottom: 30px; }
+    .hero-sub b { color: var(--text); font-weight: 600; }
+
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: var(--mono); font-size: 13px; color: var(--accent);
+      background: var(--accent-dim); border: 1px solid rgba(87, 230, 169, 0.3);
+      padding: 8px 16px; border-radius: 999px; margin-bottom: 34px;
+    }
+    .status-pill .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 8px var(--accent); animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    .btn {
+      font-family: var(--mono); font-size: 14.5px; font-weight: 600;
+      padding: 13px 26px; border-radius: 10px; display: inline-block;
+      transition: transform .15s, box-shadow .15s, background .15s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #06110c; }
+    .btn-primary:hover { box-shadow: 0 6px 24px rgba(87, 230, 169, 0.35); }
+    .btn-ghost { border: 1px solid var(--line2); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-social { display: flex; gap: 6px; margin-left: 6px; }
+    .icon-link {
+      width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 10px; color: var(--muted); transition: color .15s, background .15s;
+    }
+    .icon-link:hover { color: var(--accent); background: var(--accent-dim); text-decoration: none; }
+    .icon-link svg { width: 21px; height: 21px; fill: currentColor; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 96px 0; }
+    section .wrap > * { position: relative; }
+
+    .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+    .sec-num { font-family: var(--mono); font-size: 15px; color: var(--accent); }
+    .sec-title {
+      font-family: var(--disp); font-size: clamp(26px, 3.6vw, 36px); font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .sec-line { flex: 1; height: 1px; background: var(--line); align-self: center; min-width: 40px; }
+    .sec-sub { font-family: var(--mono); font-size: 13.5px; color: var(--faint); margin-bottom: 44px; }
+
+    /* reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .status-pill .dot, .caret, .cursor-block { animation: none; }
+    }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 18px; }
+    .about-text b { color: var(--text); font-weight: 600; }
+
+    .about-photo-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      overflow: hidden;
+    }
+    .about-photo-card img { width: 100%; display: block; filter: saturate(0.92); }
+    .about-photo-card .caption {
+      font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+      padding: 12px 16px; border-top: 1px solid var(--line);
+    }
+    .about-photo-card .caption .cm { color: var(--accent); }
+
+    .edu-line {
+      margin-top: 20px; padding: 16px 18px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 12px;
+      font-size: 15px; color: var(--muted);
+    }
+    .edu-line .deg { color: var(--text); font-weight: 600; }
+    .edu-line .mono { color: var(--accent); font-size: 13px; }
+
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+    .pillar {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 24px 22px; transition: transform .2s, border-color .2s;
+    }
+    .pillar:hover { transform: translateY(-4px); border-color: var(--line2); }
+    .pillar .p-icon { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 12px; }
+    .pillar h3 { font-family: var(--disp); font-size: 18.5px; margin-bottom: 10px; }
+    .pillar p { font-size: 14.5px; color: var(--muted); margin-bottom: 14px; }
+    .pillar .tools { font-family: var(--mono); font-size: 12px; color: var(--faint); line-height: 1.8; }
+
+    /* ---------- Experience ---------- */
+    .timeline { position: relative; padding-left: 34px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px;
+      width: 1px; background: linear-gradient(to bottom, var(--accent), var(--line) 30%, var(--line));
+    }
+
+    .job { position: relative; margin-bottom: 44px; }
+    .job:last-child { margin-bottom: 0; }
+    .job::before {
+      content: ""; position: absolute; left: -30px; top: 8px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--accent);
+    }
+    .job.past::before { border-color: var(--faint); }
+
+    .job-date { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 5px; }
+    .job.past .job-date { color: var(--faint); }
+    .job h3 { font-family: var(--disp); font-size: 21px; font-weight: 600; }
+    .job h3 .co { color: var(--text); }
+    .job h3 .role { color: var(--muted); font-weight: 500; }
+    .job .loc { font-family: var(--mono); font-size: 12.5px; color: var(--faint); margin-bottom: 12px; }
+
+    .job ul { list-style: none; margin-top: 10px; }
+    .job li {
+      color: var(--muted); font-size: 15.5px; margin-bottom: 10px; padding-left: 22px; position: relative;
+    }
+    .job li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-size: 13px; top: 2px; }
+    .job li b { color: var(--text); font-weight: 600; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .chip {
+      font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+      background: var(--surface2); border: 1px solid var(--line);
+      padding: 4px 10px; border-radius: 6px;
+    }
+
+    .earlier { margin-top: 52px; }
+    .earlier-title { font-family: var(--mono); font-size: 13px; color: var(--faint); margin-bottom: 18px; }
+    .earlier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mini-job {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px;
+    }
+    .mini-job .mj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+    .mini-job h4 { font-family: var(--disp); font-size: 16px; font-weight: 600; }
+    .mini-job .mj-date { font-family: var(--mono); font-size: 11.5px; color: var(--faint); white-space: nowrap; }
+    .mini-job p { font-size: 13.5px; color: var(--muted); }
+
+    /* ---------- Projects ---------- */
+    .featured {
+      background: linear-gradient(140deg, var(--surface) 0%, var(--bg2) 100%);
+      border: 1px solid var(--line2); border-radius: 18px;
+      padding: 38px; margin-bottom: 26px;
+      display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .featured::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(600px 300px at 85% 15%, rgba(87, 230, 169, 0.07), transparent);
+      pointer-events: none;
+    }
+    .feat-tag {
+      font-family: var(--mono); font-size: 12px; color: var(--amber);
+      border: 1px solid rgba(255, 200, 87, 0.35); background: rgba(255, 200, 87, 0.08);
+      display: inline-block; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .featured h3 { font-family: var(--disp); font-size: 26px; font-weight: 700; margin-bottom: 14px; }
+    .featured .desc { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .featured .desc b { color: var(--text); }
+
+    .proof { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .proof .chip { border-color: rgba(87, 230, 169, 0.3); color: var(--accent); background: var(--accent-dim); }
+
+    .feat-note { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+    .feat-diagram { position: relative; z-index: 1; }
+    .feat-diagram svg { width: 100%; height: auto; display: block; }
+
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .proj {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 26px 24px; display: flex; flex-direction: column;
+      transition: transform .2s, border-color .2s;
+    }
+    .proj:hover { transform: translateY(-5px); border-color: rgba(87, 230, 169, 0.4); }
+    .proj-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+    .proj-folder { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+    .proj-links { display: flex; gap: 4px; }
+    .proj-links a {
+      color: var(--faint); width: 32px; height: 32px; display: inline-flex;
+      align-items: center; justify-content: center; border-radius: 8px;
+      transition: color .15s, background .15s;
+    }
+    .proj-links a:hover { color: var(--accent); background: var(--accent-dim); }
+    .proj-links svg { width: 17px; height: 17px; fill: currentColor; }
+    .proj h4 { font-family: var(--disp); font-size: 18px; font-weight: 600; margin-bottom: 9px; }
+    .proj p { font-size: 14px; color: var(--muted); flex: 1; }
+    .proj .win { color: var(--accent); font-family: var(--mono); font-size: 12.5px; margin-top: 12px; }
+    .proj .tools { font-family: var(--mono); font-size: 11.5px; color: var(--faint); margin-top: 12px; line-height: 1.8; }
+
+    /* ---------- Beyond ---------- */
+    .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .beyond-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px 26px;
+    }
+    .beyond-card .b-icon { font-size: 26px; margin-bottom: 12px; }
+    .beyond-card h4 { font-family: var(--disp); font-size: 18.5px; margin-bottom: 10px; }
+    .beyond-card p { font-size: 14.5px; color: var(--muted); }
+    .beyond-card .stat { font-family: var(--mono); font-size: 12.5px; color: var(--amber); margin-top: 12px; display: block; }
+
+    /* ---------- Contact ---------- */
+    .contact { text-align: center; padding-bottom: 120px; }
+    .contact .sec-head { justify-content: center; }
+    .contact h2 { font-family: var(--disp); font-size: clamp(30px, 4.5vw, 46px); font-weight: 700; margin-bottom: 18px; }
+    .contact p { max-width: 560px; margin: 0 auto 34px; color: var(--muted); }
+    .contact-ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 28px 0;
+      font-family: var(--mono); font-size: 12.5px; color: var(--faint); text-align: center;
+    }
+    footer a { color: var(--muted); }
+    footer .src { margin-top: 6px; }
+
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes pulse { 50% { opacity: 0.45; } }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 940px) {
+      #fabric { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-card { max-width: 380px; }
+      .pillars { grid-template-columns: 1fr; }
+      .proj-grid { grid-template-columns: 1fr 1fr; }
+      .featured { grid-template-columns: 1fr; padding: 30px 26px; }
+      .beyond-grid { grid-template-columns: 1fr; }
+      .earlier-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      nav.links {
+        position: fixed; top: 64px; right: 0; left: 0;
+        background: rgba(11, 15, 20, 0.97); border-bottom: 1px solid var(--line);
+        flex-direction: column; align-items: flex-start; padding: 18px 28px; gap: 18px;
+        transform: translateY(-130%); transition: transform .25s ease; z-index: 40;
+      }
+      nav.links.open { transform: translateY(0); }
+      .hamburger { display: block; }
+      .proj-grid { grid-template-columns: 1fr; }
+      section { padding: 72px 0; }
+      .hero-sub { font-size: 16px; }
+    }
+  </style>
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
-  </noscript>
+      style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Navigation Menu-->
-  <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
-
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/pfp1.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-        class="mdi-social-school small"></i><span>Education</span></a>
-  </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      
-
-      <li class="bold">
-        <!--
-        ICONS:
-        mdi-action-assessment
-        mdi-social-poll
-        mdi-av-equalizer
-        -->
-        <a aria-label="Navigate to the Skills section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        -->
-
-      <li class="bold">
-        <!-- 
-        1. mdi-communication-contacts
-        2. mdi-content-mail
-        3. mdi-communication-email
-        -->
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contacts</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        1. mdi-action-description
-        2. mdi-file-folder
-        3. mdi-file-folder-open
-        4. mdi-file-attachment
-        5. mdi-file-folder-shared
-        -->
-        <!-- <a aria-label="Open Skyler's resume in a new tab" href="#resume" target="_blank"d
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Skyler's resume in a new tab"
-          href="https://skyler-create.github.io/assets/resume/Skyler_Lang_Resume.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Nav class 2 -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Skyler
-        Lang</a><span class="blue-text">Software Developer</span>
+  <header>
+    <div class="navbar">
+      <a class="logo" href="#top" aria-label="Back to top">
+        <span class="prompt">~/</span>skyler-lang<span class="cursor-block" aria-hidden="true"></span>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#about"><span class="idx">01.</span>about</a>
+        <a href="#experience"><span class="idx">02.</span>experience</a>
+        <a href="#projects"><span class="idx">03.</span>projects</a>
+        <a href="#beyond"><span class="idx">04.</span>beyond</a>
+        <a href="#contact"><span class="idx">05.</span>contact</a>
+        <a class="resume-btn" href="/assets/resume/Skyler_Lang_Resume.pdf" target="_blank" rel="noopener">resume.pdf</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Nav class 3 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
+  <main id="top">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="intro">
+      <canvas id="fabric" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="kicker"><span class="prompt">skyler@uiuc:~$</span> whoami<br>
+          <span class="out">Computer Engineer — Illinois, class of 2027</span></p>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
+        <h1>I build the layer where <span class="hl">software meets hardware</span>.</h1>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Projects</span></a>
-      </li>
+        <p class="typeline">&gt; currently_compiling: <span class="typed" id="typed"></span><span class="caret"
+            aria-hidden="true"></span></p>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Skyler's resume in a new tab"
-          href="https://skyler-create.github.io/assets/resume/Skyler_Lang_Resume.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
+        <p class="hero-sub">
+          This past year I've built <b>digital twins of AI compute clusters</b> at Lenovo and shipped
+          <b>computer vision to a live factory floor</b> in Taipei. Before that: FPGAs, solar cars, and a small
+          army of guitar pedals. Consider this my digital handshake — firm, no sweaty palms.
+        </p>
 
-  <!-- Main Content-->
-  <main>
-    <!-- First Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Skyler Lang, nice to meet you</h2>
-              <h5 style="color:#">A <span class="typing" style="font-weight: 300; color: #fcde00"></span></h5>
-              <!-- <h5 style="color:#00796b">A <span class="typing" style="font-weight: 300; color:#fff"></span></h5> -->
-              <h5>Hello World! Welcome to my little website. Imagine it being my digital handshake, just without the
-                awkward eye contact and sweaty hands.
-                Want to learn a little more about me? Sure you do!</h5>
-              <div class='buttons'>
-                <a href="#about" class="readme">Let's Go!</a>
-                <a href="#contact" class="contactme">Contact Me</a>
-              </div>
-              <br>
-            </div>
-            <div class="social">
-              <a href="https://www.linkedin.com/in/skyler-lang/" target="_blank" class="icon-btn">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
+        <span class="status-pill"><span class="dot"></span>Open to full-time SWE / systems roles — starting 2027</span>
 
-              <a href="https://github.com/skyler-create" target="_blank" class="icon-btn">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="mailto:your-email@example.com" class="icon-btn">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-
-            </div>
-
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">./view_work</a>
+          <a class="btn btn-ghost" href="#contact">say hello</a>
+          <div class="hero-social">
+            <a class="icon-link" href="https://github.com/Skyler-create" target="_blank" rel="noopener"
+              aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/skyler-lang/" target="_blank" rel="noopener"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+            </a>
+            <a class="icon-link" href="mailto:skylerlang17@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 5-8-5V6.4l8 5 8-5v1.84z"/></svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Second Section: About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About Me</h3>
-      <div class="container flow-text">
-        <!-- <blockquote>
-          <h2>
-            A Software Developer with a passion for Backend Development and Artificial Intelligence.
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-num">01.</span>
+          <h2 class="sec-title">About</h2>
+          <span class="sec-line"></span>
+        </div>
+        <p class="sec-sub reveal">// the short version</p>
 
-          </h2>
-        </blockquote> -->
-        <p>
-I’m a <b>Computer Engineering</b> student at the <b>University of Illinois at Urbana-Champaign</b> with a strong passion for problem-solving, coding, and building impactful systems. I thrive on developing complex applications that address real-world challenges and aim to create solutions that can scale to benefit millions.
-        </p>
-        <p>
-Currently, I’m seeking a <b>Summer 2025 internship</b> where I can apply my technical skills, grow professionally, and contribute meaningfully to a dynamic and innovative team.
-        </p>
-        <div class="row">
-          <div class="col s12 m6">
-            <h4><b>Hardware Skills:</b></h4>
-            <ul>
-              <li>Circuit & PCB Design (KiCad, LTspice)</li>
-              <li>Circuit Testing & Debugging (Oscilloscope, Multimeter)</li>
-              <li>Embedded Systems & Microcontrollers (Arduino, SPI)</li>
-              <li>Digital Design & FPGA Development (Vivado, Verilog)</li>
-              <li>Power Electronics & Signal Processing</li>
-              <li>Hardware-Software Integration (ROS)</li>
-            </ul>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a <b>Computer Engineering student at the University of Illinois Urbana-Champaign</b> who likes
+              working at the boundaries — where a Python script has to convince a switch to route packets, where a
+              neural net has to fit on an edge device bolted to a factory line, where an analog circuit has to
+              sound good through a guitar amp.
+            </p>
+            <p>
+              My favorite kind of problem is the one nobody has scoped yet. At <b>Lenovo</b> I inherited a
+              half-finished internal tool from an engineer who had left the company, and turned it into a working
+              pipeline that spins up virtual copies of entire AI datacenter networks. At <b>JPC in Taipei</b>, I
+              pitched two AI systems that didn't exist before I proposed them — then built both.
+            </p>
+            <p>
+              I care about <b>proof over polish</b>: LLDP tables, converged BGP sessions, TTL-verified pings,
+              oscilloscope traces. If I claim something works, I can show you the evidence.
+            </p>
+            <div class="edu-line">
+              <span class="mono">$ cat education.txt</span><br>
+              <span class="deg">B.S. Computer Engineering</span> — University of Illinois Urbana-Champaign,
+              expected 2027<br>
+              Coursework: Computer Systems &amp; Programming, Digital Systems Lab, Data Structures &amp; Algorithms,
+              Signal Processing, Robotics
+            </div>
           </div>
-          <div class="col s12 m6">
-            <h4><b>Software Skills:</b></h4>
-            <ul>
-              <li>Programming Languages: C++, C, Python, Java, SystemVerilog, HTML/CSS, JavaScript</li>
-              <li>Tools: Git/GitHub, CLI, GDB, Valgrind</li>
-              <li>Embedded Systems & Low-Level Programming</li>
-              <li>Software Development (Frontend & Backend)</li>
-              <li>Algorithms & Data Structures</li>
-            </ul>
+
+          <div class="about-photo-card reveal">
+            <img src="/assets/img/pfp1.jpg" alt="Portrait of Skyler Lang" />
+            <div class="caption"><span class="cm">// </span>skyler.jpg — compiles without warnings</div>
           </div>
         </div>
 
-
-        <!-- <p>
-          
-          Detail-oriented Software Developer with professional experience in Backend Development, Machine Learning, Computer Vision. I am adept in Python, Django, Flask, SQL, Machine Learning, Computer Vision.           
-        </p> -->
-
-        <!-- <p>
-          Another Paragraph
-        </p>  -->
-        <!-- <p>
-        <strong>Current Focus</strong>:&nbsp;<a aria-label="Navigate to the Inclusive Design Patterns homepage"
-          href="https://www.smashingmagazine.com/inclusive-design-patterns/">Accessibility</a>&nbsp;//&nbsp;<a
-          aria-label="Navigate to the Full Stack React homepage"
-          href="https://www.fullstackreact.com/">React</a>&nbsp;//&nbsp;<a
-          aria-label='Navigate to the article "Scalable CSS"'
-          href="https://mrmrs.github.io/writing/2016/03/24/scalable-css/">Design Systems</a>
-        </p> -->
-      </div>
-    </section>
-
-
-    <!-- Seventh Section: Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
-          <!-- Education -->
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://illinois.edu/" target="_blank"
-                      class="teal-text hoverline">University of Illinois at Urbana-Champaign (UIUC)</a></span>
-                </p>
-                <p class="brown-text">Urbana-Champaign, Illinois</p>
-                <p>
-                  <b>Degree: </b>Bachelor of Science in <b>Computer Engineering</b>
-                  <br>
-                </p>
-              </div>
-            </div>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <div class="p-icon">[01] networks &amp; infra</div>
+            <h3>Network Automation</h3>
+            <p>Digital twins of datacenter fabrics, BGP/FRR config generation, topology verification, and
+              infrastructure-as-code.</p>
+            <div class="tools">Python · containerlab · SONiC · FRR · BGP · NetBox · Docker · Linux</div>
+          </div>
+          <div class="pillar reveal">
+            <div class="p-icon">[02] embedded &amp; hardware</div>
+            <h3>Embedded Systems</h3>
+            <p>PCB design through firmware: microcontrollers, FPGAs, motor control, sensor integration, and
+              debugging with real test equipment.</p>
+            <div class="tools">C/C++ · SystemVerilog · KiCad · Vivado · Arduino · STM32 · SPI · LTspice</div>
+          </div>
+          <div class="pillar reveal">
+            <div class="p-icon">[03] applied ml</div>
+            <h3>Applied ML</h3>
+            <p>ML that ships: RAG systems on private data, real-time vision on edge devices, and audio DSP
+              models — deployed, not just demoed.</p>
+            <div class="tools">PyTorch · YOLO · Mask R-CNN · LangChain · ChromaDB · Ollama · OpenCV</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-num">02.</span>
+          <h2 class="sec-title">Experience</h2>
+          <span class="sec-line"></span>
+        </div>
+        <p class="sec-sub reveal">// git log --oneline --reverse=false</p>
 
-
-    <!-- Third Section: Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
-      <div class="container">
-                <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.jpcco.com/" target="_blank"><img alt="Savage Tumaz"
-                    src="/assets/img/JPC_logo.png" class="responsive-img center-block" /></a>
-              </div>
-
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-              
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Jess-Link Products Connectivity | AI Engineer</div>
+        <div class="timeline">
+          <!-- Lenovo -->
+          <div class="job reveal">
+            <div class="job-date">Summer 2026</div>
+            <h3><span class="co">Lenovo</span> <span class="role">— Network Automation Engineer Intern</span></h3>
+            <div class="loc">Morrisville, NC · Infrastructure Solutions Group — AI cluster design &amp; verification</div>
             <ul>
-              <li>Proposed and built a RAG (Retrieval-Augmented Generation) tool using LangChain, ChromaDB, and Ollama
-to query engineering documents, reducing search time by over 50% and improving team knowledge sharing.</li>
-    
-              <li>
-                Initiated and developed an AI-based defect detection pipeline with YOLO and Mask-CNN, optimized for Jetson 
-Orin NX and integrated with factory systems for real-time quality control.
-              </li>
-              <li>
-                <b>Tools:</b> Python, LangChain, ChromaDB, Ollama, YOLO, Mask R-CNN, PyTorch, OpenCV, NVIDIA Jetson Orin NX, Linux, Docker, Factory Automation Systems, REST APIs, Git
-              </li>
+              <li>Sole owner of an internal Python pipeline that converts <b>AI compute-cluster network designs into
+                  deployable containerlab digital twins</b> — virtual SONiC switch fabrics that let engineers validate
+                a cluster's entire control plane before a single piece of hardware is purchased.</li>
+              <li>Automated the full routing layer: <b>numbered eBGP over FRR</b> with structured 4-byte ASN
+                assignment, surgical <span class="mono">config_db</span> patching on SONiC, and automatic server
+                addressing — <b>zero manual configuration</b> from design file to converged fabric.</li>
+              <li>Proved end-to-end correctness on <b>all four routable fabrics</b> (GPU backend, frontend, and two
+                storage networks): LLDP topology verification, BGP session establishment, and real server-to-server
+                traffic confirmed by TTL-decrement analysis across leaf→core→leaf paths.</li>
+              <li>Inherited legacy topology code from a departed engineer with <b>full design authority</b>; made and
+                documented the core fidelity decision (structural fidelity over proportional scale-down, after proving
+                exact proportional shrink mathematically impossible for real designs).</li>
             </ul>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">containerlab</span><span class="chip">SONiC</span>
+              <span class="chip">FRR / BGP</span><span class="chip">NetBox</span><span class="chip">Docker</span>
+              <span class="chip">Linux</span><span class="chip">GitLab</span>
+            </div>
           </div>
-          <div class="card-action">
-            <span>May 2025 - August 2025 | Taipei, Taiwan</span>
+
+          <!-- JPC -->
+          <div class="job reveal">
+            <div class="job-date">May 2025 — Aug 2025</div>
+            <h3><span class="co">JPC — Jess-Link Products Connectivity</span> <span class="role">— AI Engineer
+                Intern</span></h3>
+            <div class="loc">Taipei, Taiwan</div>
+            <ul>
+              <li><b>Proposed and built a RAG document-search system</b> (LangChain + ChromaDB + Ollama, fully
+                on-prem) so engineers could query proprietary engineering documents in natural language — cut average
+                search time by <b>over 50%</b>.</li>
+              <li><b>Initiated an AI defect-detection pipeline</b> using YOLO and Mask R-CNN, optimized for the
+                NVIDIA Jetson Orin NX and integrated with factory systems for real-time quality control on the
+                production line.</li>
+              <li>Both projects were self-pitched: identified the problem, made the case to management, and delivered
+                working systems within one summer.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">LangChain</span>
+              <span class="chip">ChromaDB</span><span class="chip">Ollama</span><span class="chip">YOLO</span>
+              <span class="chip">Mask R-CNN</span><span class="chip">Jetson Orin NX</span><span class="chip">OpenCV</span>
+              <span class="chip">REST APIs</span>
+            </div>
+          </div>
+
+          <!-- Micromouse -->
+          <div class="job reveal">
+            <div class="job-date">2024 — Present</div>
+            <h3><span class="co">iRobotics (Micromouse)</span> <span class="role">— Electrical Team Lead</span></h3>
+            <div class="loc">University of Illinois Urbana-Champaign</div>
+            <ul>
+              <li>Lead the electrical team building an autonomous maze-solving robot: schematic and PCB design,
+                sensor interfacing, power management, and PID-controlled motors.</li>
+              <li>Contributed a modified <b>flood-fill pathfinding algorithm</b> that maps unknown mazes and computes
+                the fastest escape path under real hardware constraints.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Arduino Nano</span><span class="chip">C++</span><span class="chip">PID control</span>
+              <span class="chip">SPI</span><span class="chip">KiCad</span><span class="chip">IR sensors</span>
+            </div>
+          </div>
+
+          <!-- eFold -->
+          <div class="job reveal">
+            <div class="job-date">2024 — Present</div>
+            <h3><span class="co">eFold</span> <span class="role">— Embedded Systems Engineer</span></h3>
+            <div class="loc">University of Illinois Urbana-Champaign</div>
+            <ul>
+              <li>Student-led team building a modular electric skateboard from scratch — motor control (VESC),
+                battery management, and regenerative braking.</li>
+              <li>Modified VESC hardware and firmware to support a 12S2P battery pack, <b>improving battery life by
+                  17%</b> via MOSFET and voltage-divider redesigns for safe high-voltage operation.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">VESC</span><span class="chip">BLDC motors</span><span class="chip">BMS</span>
+              <span class="chip">STM32</span><span class="chip">firmware</span><span class="chip">MATLAB</span>
+            </div>
+          </div>
+
+          <!-- Solar Car -->
+          <div class="job reveal past">
+            <div class="job-date">2023 — Present</div>
+            <h3><span class="co">Illini Solar Car</span> <span class="role">— Electrical Engineer</span></h3>
+            <div class="loc">University of Illinois Urbana-Champaign</div>
+            <ul>
+              <li>Built and tested circuits for <b>Calypso</b>, a road-going solar-powered race car; designed an
+                improved braking sensor using a custom string potentiometer for finer control accuracy.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">KiCad</span><span class="chip">PCB testing</span><span class="chip">soldering</span>
+              <span class="chip">oscilloscope</span>
+            </div>
           </div>
         </div>
 
-                <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="http://micromouseusa.com/?page_id=23" target="_blank"><img alt="Savage Tumaz"
-                    src="/assets/img/mouse.jpg" class="responsive-img center-block" /></a>
+        <div class="earlier reveal">
+          <div class="earlier-title">// earlier commits</div>
+          <div class="earlier-grid">
+            <div class="mini-job">
+              <div class="mj-head">
+                <h4>Byte-Sized Coders — Cofounder &amp; VP</h4>
+                <span class="mj-date">2018 — 2023 · Taipei</span>
               </div>
-
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-              
-              </div>
+              <p>Founded a coding-education club with 30+ active students. Wrote and taught a year-long Python
+                curriculum, and ran Scratch summer camps at underprivileged elementary schools.</p>
             </div>
-            <div class="role brown-text text-darken-2">iRobotics Micromouse | Embedded Systems Engineer</div>
-            <ul>
-              <li>Designed and built a Micromouse robot for autonomous maze-solving using PID-controlled motors and real-time sensor input.</li>
-    
-              <li>
-                Implemented flood-fill algorithm for dynamic pathfinding and maze mapping.
-              </li>
-              <li>
-                Focused on hardware integration and control system tuning for accurate navigation.
-              </li>
-              <li>
-                <b>Tools:</b> Arduino Nano, PID Control, SPI Communication, Infrared Sensors, C++, KiCad, Multimeter, Oscilloscope
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>August 2024 - Present | Urbana-Champaign, Illinois</span>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="" target="_blank"><img alt="Savage Tumaz"
-                    src="/assets/img/efold.png" class="responsive-img center-block" /></a>
+            <div class="mini-job">
+              <div class="mj-head">
+                <h4>FIRST Robotics — Software Developer</h4>
+                <span class="mj-date">2020 — 2022 · Taipei</span>
               </div>
-
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-              
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">eFold | Embedded Systems Engineer</div>
-            <ul>
-              <li>
-Contributed to a student-led team building a modular electric skateboard from scratch.              </li>
-              <li>
-Focused on motor control (VESC), battery management system (BMS), and regenerative braking implementation.
-              </li>
-              <li>Assisted in component research, firmware configuration, and hardware debugging.</li>
-              <li>
-                <b>Tools:</b> VESC Tool, BLDC Motors, BMS (12S2P), STM32 Microcontroller, Firmware Tuning, Soldering Station, KiCad, MATLAB
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>December 2024 - Present | Urbana-Champaign, Illinois</span>
-          </div>
-        </div>
-
-
-        <!-- Latest Experience -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.illinisolarcar.com/" target="_blank"><img alt="Illini Solar Car"
-                    src="/assets/img/sc.png" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Illini Solar Car | Electrical Engineer</div>
-            <ul>
-              <li>
-Contributed to the construction of Calypso, a solar-powered vehicle, by soldering and testing key circuit components.              </li>
-              <li>Designed and implemented an improved braking system using a custom-built string potentiometer sensor for better accuracy.</li>
-              <li>Ensured system integration across electrical subsystems with a focus on safety, reliability, and efficiency.</li>
-              <li>Collaborated with mechanical and firmware teams for real-world performance testing.</li>
-              <li>
-                <b>Tools:</b> KiCad, Soldering Station, Multimeter, Oscilloscope, Brake Sensor Prototyping, PCB Testing, Git
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>August 2023 - Present | Urbana-Champaign, Illinois</span>
-          </div>
-        </div>
-
-
-        
-
-
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.instagram.com/fhjh.bytesizedcoders/?hl=en" target="_blank"><img alt="Byte-Sized Coders"
-                    src="/assets/img/byte.png" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Byte-Sized Coders | Cofounder</div>
-            <ul>
-              <li>
-Founded a coding education club for middle and high school students with over 30 active participants.
-              </li>
-              <li>
-Designed and taught a year-long Python curriculum focused on fundamentals, problem-solving, and project-based learning.
-              </li>
-              <li>
-Organized outreach programs and summer camps to teach Scratch at underprivileged elementary schools.
-              </li>
-              <li>Led a team of instructors and managed digital platforms (Moodle, Google Classroom) for student engagement.
-</li>
-              <li>
-                <b>Tools:</b> Python, Scratch, Moodle, Google Classroom, GitHub, Zoom
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>July 2018 - May 2023 | Taipei, Taiwan</span>
-          </div>
-        </div>
-    
-        <!-- Experience 2 -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://savagetumaz6947.wixsite.com/6947" target="_blank"><img alt="Savage Tumaz"
-                    src="/assets/img/tumazz.jpg" class="responsive-img center-block" /></a>
-              </div>
-
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-              
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">First Robotics Competition | Software Developer</div>
-            <ul>
-              <li>
-Developed autonomous code for FIRST Robotics competition, enabling the robot to navigate, shoot, and climb without human input.              </li>
-              <li>
-Strengthened the robot’s durability by reinforcing contact points and repairing damaged motor regions.
-              </li>
-              <li>Played a key role in integrating sensor feedback with motor control for reliable autonomous operation.
-</li>
-              <li>Contributed to match strategy and real-time field debugging during competitions.
-
-</li>
-              <li>
-                <b>Tools:</b> C++, LabVIEW, Motor Controllers, Encoders, Limit Switches, Soldering Tools, FRC Libraries
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>July 2020 - May 2022 | Taipei, Taiwan</span>
-          </div>
-        </div>
-    </section>
-
-
-
-    <!-- Fourth Section: Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="music streaming app" src="/assets/img/project-music-player.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">AI-Enhanced Guitar Effects Pedal<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  An AI model that listens to guitar tone and replicates it
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, Raspberry Pi, Audio DSP, ML (OpenL3, MFCC, CNN), Real-time signal routing.</li>
-                  <li>Uses ML models trained on MFCCs and OpenL3 embeddings to detect effects and estimate knob settings.</li>
-                  <li>Enables real-time tone matching by comparing live input to reference audio clips.</li>
-                  <li>Built as a smart pedal that adapts tone automatically for performance or recording.</li>
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
+              <p>Wrote autonomous-mode code (navigate, shoot, climb — no human input) and integrated sensor feedback
+                with motor control for competition robots.</p>
             </div>
           </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="quiz app" src="/assets/img/urbana.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">FPGA SD Card Reader<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  SPI interfaced Micro-SD Card Reader for FPGA
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> SystemVerilog, Xilinx Vivado, SPI, BRAM, HDMI, VGA, Filters.</li>
-                  <li>Reads RAW images from an SD card and stores pixel data in BRAM using SPI.</li>
-                  <li>Displays images in real time via HDMI with a custom VGA controller.</li>
-                  <li>Demonstrates complete image processing pipeline on an FPGA without a CPU.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Flask Project -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of web app" src="/assets/img/wireless.png"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Wireless Guitar System<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A RF-based wireless guitar transmitter and receiver system.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Analog/Digital Circuit Design, Op-Amps, ADC, DAC, RF Modules, KiCad, Signal Integrity</li>
-                  <li>Designed ADC-to-RF transmitter and RF-to-DAC receiver.</li>
-                  <li>Built and tested custom PCB with clean analog routing.</li>
-                  <li>Created a plug-and-play wireless guitar setup.</li>
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://github.com/Skyler-create" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/Skyler-create"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- VQA -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/distortion.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Distortion Guitar Pedal<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Self-designed distortion guitar pedal.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools: </b>Op-Amps (TL072), Clipping Diodes (LED, Germanium, Schottky), Tone Stack Design, KiCad</li>
-                  <li>Designed op-amp gain stages with tone controls.</li>
-                  <li>Tuned filters to reduce noise and shape sound.</li>
-                  <li>Produced a flexible analog distortion effect.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/Skyler-create" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Udemy Basketball Course" src="/assets/img/udemy.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Basketball Fundamentals Course<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Full-length basketball course published on Udemy.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Platform:</b> Udemy (Online Learning)</li>
-                  <li>Designed and taught a comprehensive basketball fundamentals course</li>
-                  <li>Covered shooting, footwork, ball-handling, and strategy</li>
-                  <li>Reached over 1500 students with a 4.4★ average rating</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="View Course on Udemy"
-                    href="https://www.udemy.com" target="_blank"
-                    data-position="top" data-tooltip="View Course"
-                    class="btn-floating btn-large waves-effect waves-light orange tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ************* -->
         </div>
       </div>
     </section>
-    
-    <!-- Eight Section: Contact -->
-    <section id="contact" class="section scrollspy">
 
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-num">03.</span>
+          <h2 class="sec-title">Projects</h2>
+          <span class="sec-line"></span>
+        </div>
+        <p class="sec-sub reveal">// things that actually run</p>
+
+        <!-- Featured -->
+        <div class="featured reveal">
+          <div>
+            <span class="feat-tag">★ flagship — built at Lenovo</span>
+            <h3>AI Cluster Digital Twin Pipeline</h3>
+            <p class="desc">
+              A Python pipeline that takes a <b>paper design of an AI datacenter network</b> — hundreds of switches,
+              five separate fabrics — and boots a faithful, scaled-down <b>virtual replica</b> of it in containerlab:
+              real SONiC network operating systems, real BGP converging over FRR, real packets crossing a
+              leaf-spine fabric. Design flaws surface in a lab VM instead of on a customer's loading dock.
+            </p>
+            <div class="proof">
+              <span class="chip">4/4 routable fabrics passing live traffic</span>
+              <span class="chip">0 manual config steps</span>
+              <span class="chip">TTL-verified leaf→core→leaf</span>
+            </div>
+            <p class="feat-note">// internal tool — code private, whiteboard walkthrough gladly offered in interviews</p>
+          </div>
+          <div class="feat-diagram" aria-hidden="true">
+            <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+              <!-- design box -->
+              <rect x="10" y="20" width="120" height="52" rx="8" fill="none" stroke="#5c6b80" stroke-width="1.2"/>
+              <text x="70" y="42" fill="#8b9bb0" font-size="11" text-anchor="middle">cluster</text>
+              <text x="70" y="58" fill="#8b9bb0" font-size="11" text-anchor="middle">design</text>
+              <!-- arrow -->
+              <line x1="130" y1="46" x2="170" y2="46" stroke="#57e6a9" stroke-width="1.4" marker-end="url(#arr)"/>
+              <!-- pipeline box -->
+              <rect x="172" y="8" width="118" height="76" rx="8" fill="rgba(87,230,169,0.07)" stroke="#57e6a9" stroke-width="1.4"/>
+              <text x="231" y="28" fill="#57e6a9" font-size="11" text-anchor="middle">scale ↓</text>
+              <text x="231" y="46" fill="#57e6a9" font-size="11" text-anchor="middle">emit yaml</text>
+              <text x="231" y="64" fill="#57e6a9" font-size="11" text-anchor="middle">deploy + bgp</text>
+              <!-- arrow down -->
+              <line x1="231" y1="84" x2="231" y2="118" stroke="#57e6a9" stroke-width="1.4" marker-end="url(#arr)"/>
+              <!-- fabric: spines -->
+              <g stroke="#2a3648" stroke-width="1">
+                <line x1="150" y1="150" x2="110" y2="220"/><line x1="150" y1="150" x2="190" y2="220"/>
+                <line x1="150" y1="150" x2="270" y2="220"/><line x1="150" y1="150" x2="350" y2="220"/>
+                <line x1="231" y1="150" x2="110" y2="220"/><line x1="231" y1="150" x2="190" y2="220"/>
+                <line x1="231" y1="150" x2="270" y2="220"/><line x1="231" y1="150" x2="350" y2="220"/>
+                <line x1="312" y1="150" x2="110" y2="220"/><line x1="312" y1="150" x2="190" y2="220"/>
+                <line x1="312" y1="150" x2="270" y2="220"/><line x1="312" y1="150" x2="350" y2="220"/>
+              </g>
+              <!-- highlighted verified path -->
+              <path d="M110 220 L231 150 L350 220" fill="none" stroke="#ffc857" stroke-width="1.6" stroke-dasharray="5 4">
+                <animate attributeName="stroke-dashoffset" from="36" to="0" dur="1.6s" repeatCount="indefinite"/>
+              </path>
+              <!-- spine nodes -->
+              <g>
+                <rect x="136" y="140" width="28" height="18" rx="4" fill="#121924" stroke="#57e6a9" stroke-width="1.3"/>
+                <rect x="217" y="140" width="28" height="18" rx="4" fill="#121924" stroke="#57e6a9" stroke-width="1.3"/>
+                <rect x="298" y="140" width="28" height="18" rx="4" fill="#121924" stroke="#57e6a9" stroke-width="1.3"/>
+              </g>
+              <!-- leaf nodes -->
+              <g>
+                <rect x="96" y="212" width="28" height="18" rx="4" fill="#121924" stroke="#8b9bb0" stroke-width="1.2"/>
+                <rect x="176" y="212" width="28" height="18" rx="4" fill="#121924" stroke="#8b9bb0" stroke-width="1.2"/>
+                <rect x="256" y="212" width="28" height="18" rx="4" fill="#121924" stroke="#8b9bb0" stroke-width="1.2"/>
+                <rect x="336" y="212" width="28" height="18" rx="4" fill="#121924" stroke="#8b9bb0" stroke-width="1.2"/>
+              </g>
+              <text x="110" y="258" fill="#5c6b80" font-size="10" text-anchor="middle">leaf</text>
+              <text x="231" y="132" fill="#5c6b80" font-size="10" text-anchor="middle">core / spine</text>
+              <text x="350" y="258" fill="#5c6b80" font-size="10" text-anchor="middle">leaf</text>
+              <text x="231" y="285" fill="#ffc857" font-size="10.5" text-anchor="middle">ping ttl=61 ✓  (leaf → core → leaf, proven live)</text>
+              <defs>
+                <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="#57e6a9"/>
+                </marker>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <div class="proj-grid">
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/jpc/rag-search</span>
+            </div>
+            <h4>Engineering-Docs RAG Search</h4>
+            <p>On-prem retrieval-augmented search over proprietary engineering documents. Natural-language questions,
+              grounded answers, zero data leaving the building.</p>
+            <div class="win">→ cut doc search time 50%+ at JPC</div>
+            <div class="tools">LangChain · ChromaDB · Ollama · Python</div>
+          </div>
+
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/jpc/defect-detect</span>
+            </div>
+            <h4>Real-Time Defect Detection</h4>
+            <p>Vision pipeline spotting product defects on a live production line — YOLO for detection, Mask R-CNN
+              for segmentation, squeezed onto a Jetson Orin NX at the edge.</p>
+            <div class="win">→ integrated with live factory QC systems</div>
+            <div class="tools">PyTorch · YOLO · Mask R-CNN · OpenCV · Jetson</div>
+          </div>
+
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/audio/ai-pedal</span>
+              <div class="proj-links">
+                <a href="https://github.com/Skyler-create" target="_blank" rel="noopener" aria-label="GitHub profile">
+                  <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h4>AI Guitar Effects Pedal</h4>
+            <p>A pedal that listens to a reference guitar tone and replicates it — MFCC + OpenL3 embeddings feed a
+              CNN that identifies the effect and estimates the knob settings, live on a Raspberry Pi.</p>
+            <div class="win">→ real-time tone matching from audio alone</div>
+            <div class="tools">Python · CNN · OpenL3 · MFCC · Raspberry Pi · DSP</div>
+          </div>
+
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/fpga/sd-reader</span>
+              <div class="proj-links">
+                <a href="https://github.com/Skyler-create/Urbana_Board_Micro_Sd_Card_Reader" target="_blank"
+                  rel="noopener" aria-label="View source on GitHub">
+                  <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h4>FPGA Image Pipeline</h4>
+            <p>Reads raw images off a micro-SD card over SPI, stages pixels through BRAM, and drives an HDMI display
+              with a custom VGA controller — a complete image pipeline with <b>no CPU anywhere</b>.</p>
+            <div class="win">→ pure SystemVerilog, cycle-accurate</div>
+            <div class="tools">SystemVerilog · Vivado · SPI · BRAM · HDMI/VGA</div>
+          </div>
+
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/audio/wireless-guitar</span>
+            </div>
+            <h4>Wireless Guitar System</h4>
+            <p>RF transmitter/receiver pair replacing a guitar cable: ~10 ms ADC latency (MCP3008), low-noise
+              NE5534 amplification, custom PCB — prototyped on breadboard, verified on oscilloscope, laid out
+              in KiCad.</p>
+            <div class="win">→ plug-and-play, playable latency</div>
+            <div class="tools">RF · ADC/DAC · Arduino · LTspice · KiCad · PCB</div>
+          </div>
+
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/audio/distortion-pedal</span>
+            </div>
+            <h4>Analog Distortion Pedal</h4>
+            <p>Fully analog distortion from first principles: op-amp gain staging, selectable clipping diodes
+              (LED / germanium / Schottky — each clips differently), and a tuned tone stack.</p>
+            <div class="win">→ designed, built, and gigged with</div>
+            <div class="tools">TL072 · clipping diodes · tone stack · KiCad</div>
+          </div>
+        </div>
       </div>
-      <h3 class="page-title white-text teal">Contacts</h3>
-      <div class="container">
-        <p>
-        <p>
-          <a aria-label="View Skyler on LinkedIn" href="https://www.linkedin.com/in/skyler-lang/" target="_blank"
-            data-position="top" data-tooltip="View Skyler on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light black tooltipped"><i
-              class="fa-brands fa-linkedin"></i><a aria-label="Skyler on Github"
-              href="https://www.linkedin.com/in/skyler-lang/" class="hoverline"
-              target="_blank">&nbsp&nbsplinkedin.com/in/skyler-lang</a></a>
-        </p>
+    </section>
 
-        <p>
-          <a aria-label="View Skyler on GitHub" href="https://github.com/Skyler-create" target="_blank"
-            data-position="top" data-tooltip="View Skyler on GitHub"
-            class="btn-floating btn-large waves-effect waves-light black tooltipped"><i
-              class="fa-brands fa-github"></i><a aria-label="Skyler on Github" href="https://github.com/Skyler-create"
-              class="hoverline" target="_blank">&nbsp&nbspgithub.com/Skyler-create</a></a>
-        </p>
-        <p>
-          <a aria-label="Email Skyler" href="mailto:skylerlang17@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Skyler" class="btn-floating btn-large waves-effect waves-light black tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Skyler" href="mailto:skylerlang17@gmail.com"
-              class="hoverline">&nbsp&nbspskylerlang17@gmail.com</a></a>
-        </p>
+    <!-- ================= BEYOND ================= -->
+    <section id="beyond">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-num">04.</span>
+          <h2 class="sec-title">Beyond the terminal</h2>
+          <span class="sec-line"></span>
+        </div>
+        <p class="sec-sub reveal">// proof I'm a person, not a resume-generating script</p>
 
+        <div class="beyond-grid">
+          <div class="beyond-card reveal">
+            <div class="b-icon">🏀</div>
+            <h4>I teach basketball to 1,500+ students</h4>
+            <p>I published a full basketball fundamentals course on Udemy — shooting, footwork, ball-handling,
+              strategy. I coach shooting form the way I debug circuits: isolate one variable, change one thing,
+              measure again.</p>
+            <span class="stat">1,500+ students · 4.4★ average rating</span>
+          </div>
+          <div class="beyond-card reveal">
+            <div class="b-icon">🎸</div>
+            <h4>I build the gear I play through</h4>
+            <p>Three of the projects above exist because I play guitar and got curious about what was inside my
+              pedals. Now my signal chain is increasingly things I soldered myself — which means when it hums,
+              it's personal.</p>
+            <span class="stat">analog + digital + ML, all in one signal chain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <p class="sec-sub reveal" style="margin-bottom:14px;"><span class="sec-num">05.</span> // what's next</p>
+        <h2 class="reveal">Let's build something real.</h2>
+        <p class="reveal">
+          I graduate in 2027 and I'm looking for full-time software and systems engineering roles. If you're hiring
+          people who are comfortable everywhere from BGP configs to breadboards, my inbox is open — I answer fast.
+        </p>
+        <div class="contact-ctas reveal">
+          <a class="btn btn-primary" href="mailto:skylerlang17@gmail.com">skylerlang17@gmail.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/skyler-lang/" target="_blank"
+            rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/Skyler-create" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="/assets/resume/Skyler_Lang_Resume.pdf" target="_blank"
+            rel="noopener">resume.pdf</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing', {
-      strings: ["Computer Engineer", "Web Developer", "Writer", "Skyler"],
-      loop: true,
-      typeSpeed: 90,
-      backSpeed: 50
-    });
-  </script>
+  <footer>
+    <div class="wrap">
+      <div>© 2026 Skyler Lang · Urbana-Champaign ⇄ Taipei</div>
+      <div class="src">Hand-built with vanilla HTML/CSS/JS — no framework, no template.
+        <a href="https://github.com/Skyler-create/Skyler-create.github.io" target="_blank" rel="noopener">view
+          source</a> if you don't believe me.</div>
+    </div>
+  </footer>
 
-
-  <!-- jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy()
-      // Initialize collapse button
-      $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      })
-    })
+    /* ---------- typed line ---------- */
+    (function () {
+      var words = ["network_automation", "embedded_systems", "applied_ml", "fpga_design", "guitar_pedals.ko"];
+      var el = document.getElementById("typed");
+      if (!el) return;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        el.textContent = words[0];
+        return;
+      }
+      var wi = 0, ci = 0, deleting = false;
+      function tick() {
+        var w = words[wi];
+        if (!deleting) {
+          ci++;
+          el.textContent = w.slice(0, ci);
+          if (ci === w.length) { deleting = true; return setTimeout(tick, 1700); }
+          return setTimeout(tick, 65 + Math.random() * 50);
+        }
+        ci--;
+        el.textContent = w.slice(0, ci);
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; return setTimeout(tick, 350); }
+        setTimeout(tick, 32);
+      }
+      tick();
+    })();
+
+    /* ---------- reveal on scroll ---------- */
+    (function () {
+      var els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(function (e) { e.classList.add("visible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+
+    /* ---------- scrollspy ---------- */
+    (function () {
+      var links = document.querySelectorAll("nav.links a[href^='#']");
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+      var sections = document.querySelectorAll("main section[id]");
+      if (!("IntersectionObserver" in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && map[en.target.id]) {
+            links.forEach(function (a) { a.classList.remove("active"); });
+            map[en.target.id].classList.add("active");
+          }
+        });
+      }, { rootMargin: "-35% 0px -55% 0px" });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+
+    /* ---------- mobile nav ---------- */
+    (function () {
+      var btn = document.querySelector(".hamburger");
+      var nav = document.querySelector("nav.links");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.textContent = open ? "✕" : "☰";
+      });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+          btn.textContent = "☰";
+        });
+      });
+    })();
+
+    /* ---------- hero fabric animation ---------- */
+    (function () {
+      var canvas = document.getElementById("fabric");
+      if (!canvas) return;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var ctx = canvas.getContext("2d");
+      var W, H, dpr;
+      var spines = [], leaves = [], packets = [];
+
+      function layout() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var rect = canvas.getBoundingClientRect();
+        W = rect.width; H = rect.height;
+        if (W === 0 || H === 0) return;
+        canvas.width = W * dpr; canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        spines = []; leaves = [];
+        var sn = 3, ln = 5;
+        for (var i = 0; i < sn; i++)
+          spines.push({ x: W * (0.28 + 0.44 * i / (sn - 1)), y: H * 0.30, r: 5 });
+        for (var j = 0; j < ln; j++)
+          leaves.push({ x: W * (0.14 + 0.72 * j / (ln - 1)), y: H * 0.62, r: 4 });
+      }
+
+      function spawnPacket() {
+        if (leaves.length === 0) return;
+        var a = Math.floor(Math.random() * leaves.length);
+        var b = Math.floor(Math.random() * leaves.length);
+        if (b === a) b = (a + 1 + Math.floor(Math.random() * (leaves.length - 1))) % leaves.length;
+        var s = Math.floor(Math.random() * spines.length);
+        packets.push({ path: [leaves[a], spines[s], leaves[b]], t: 0, speed: 0.006 + Math.random() * 0.004 });
+      }
+
+      function lerp(p, q, t) { return { x: p.x + (q.x - p.x) * t, y: p.y + (q.y - p.y) * t }; }
+
+      function frame() {
+        if (W === 0) { requestAnimationFrame(frame); return; }
+        ctx.clearRect(0, 0, W, H);
+
+        // links
+        ctx.strokeStyle = "rgba(87,230,169,0.10)";
+        ctx.lineWidth = 1;
+        spines.forEach(function (s) {
+          leaves.forEach(function (l) {
+            ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(l.x, l.y); ctx.stroke();
+          });
+        });
+
+        // nodes
+        function node(n, bright) {
+          ctx.beginPath();
+          ctx.rect(n.x - 7, n.y - 4, 14, 8);
+          ctx.fillStyle = "#0e141b";
+          ctx.fill();
+          ctx.strokeStyle = bright ? "rgba(87,230,169,0.75)" : "rgba(139,155,176,0.45)";
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        }
+        spines.forEach(function (s) { node(s, true); });
+        leaves.forEach(function (l) { node(l, false); });
+
+        // packets
+        for (var i = packets.length - 1; i >= 0; i--) {
+          var p = packets[i];
+          p.t += p.speed;
+          if (p.t >= 1) { packets.splice(i, 1); continue; }
+          var seg = p.t < 0.5 ? 0 : 1;
+          var lt = (p.t % 0.5) / 0.5;
+          var pos = lerp(p.path[seg], p.path[seg + 1], lt);
+          var g = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 7);
+          g.addColorStop(0, "rgba(87,230,169,0.9)");
+          g.addColorStop(1, "rgba(87,230,169,0)");
+          ctx.fillStyle = g;
+          ctx.beginPath(); ctx.arc(pos.x, pos.y, 7, 0, Math.PI * 2); ctx.fill();
+        }
+
+        requestAnimationFrame(frame);
+      }
+
+      layout();
+      window.addEventListener("resize", layout);
+      setInterval(spawnPacket, 900);
+      spawnPacket();
+      requestAnimationFrame(frame);
+    })();
   </script>
 </body>
 
