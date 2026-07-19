@@ -362,6 +362,24 @@
     .beyond-card h4 { font-family: var(--disp); font-size: 18.5px; margin-bottom: 10px; }
     .beyond-card p { font-size: 14.5px; color: var(--muted); }
     .beyond-card .stat { font-family: var(--mono); font-size: 12.5px; color: var(--amber); margin-top: 12px; display: block; }
+    .beyond-card .stat a { color: var(--amber); }
+
+    /* linked org names + featured variants */
+    .job h3 a { color: var(--text); }
+    .job h3 a:hover { color: var(--accent); text-decoration: none; }
+    .mini-job h4 a { color: var(--text); }
+    .mini-job h4 a:hover { color: var(--accent); text-decoration: none; }
+    .featured.founder { border-color: rgba(255, 200, 87, 0.35); }
+    .featured.founder::before {
+      background: radial-gradient(600px 300px at 85% 15%, rgba(255, 200, 87, 0.07), transparent);
+    }
+    .featured.founder .proof .chip {
+      border-color: rgba(255, 200, 87, 0.35); color: var(--amber); background: rgba(255, 200, 87, 0.08);
+    }
+    .feat-cta {
+      font-family: var(--mono); font-size: 13.5px; font-weight: 600; display: inline-block;
+      margin-right: 18px; margin-bottom: 10px;
+    }
 
     /* ---------- Contact ---------- */
     .contact { text-align: center; padding-bottom: 120px; }
@@ -444,9 +462,10 @@
             aria-hidden="true"></span></p>
 
         <p class="hero-sub">
-          This past year I've built <b>digital twins of AI compute clusters</b> at Lenovo and shipped
-          <b>computer vision to a live factory floor</b> in Taipei. Before that: FPGAs, solar cars, and a small
-          army of guitar pedals. Consider this my digital handshake — firm, no sweaty palms.
+          This past year I built <b>digital twins of AI compute clusters</b> at Lenovo, shipped
+          <b>computer vision to a live factory floor</b> in Taipei — and now I'm launching
+          <a href="https://hoop-ai-landing.vercel.app/en" target="_blank" rel="noopener"><b>Hoop AI</b></a>, my own
+          computer-vision shot tracker. Consider this my digital handshake — firm, no sweaty palms.
         </p>
 
         <span class="status-pill"><span class="dot"></span>Open to full-time SWE / systems roles — starting 2027</span>
@@ -493,11 +512,15 @@
               My favorite kind of problem is the one nobody has scoped yet. At <b>Lenovo</b> I inherited a
               half-finished internal tool from an engineer who had left the company, and turned it into a working
               pipeline that spins up virtual copies of entire AI datacenter networks. At <b>JPC in Taipei</b>, I
-              pitched two AI systems that didn't exist before I proposed them — then built both.
+              pitched two AI systems that didn't exist before I proposed them — then built both. Now I'm doing it
+              for myself: <a href="https://hoop-ai-landing.vercel.app/en" target="_blank" rel="noopener"><b>Hoop
+                  AI</b></a>, my computer-vision shot tracker, is live for pre-launch reservations.
             </p>
             <p>
               I care about <b>proof over polish</b>: LLDP tables, converged BGP sessions, TTL-verified pings,
-              oscilloscope traces. If I claim something works, I can show you the evidence.
+              oscilloscope traces. If I claim something works, I can show you the evidence. That extends to how I
+              work — I use AI tools aggressively in my workflow, and verify everything they produce, because I've
+              watched them be confidently wrong.
             </p>
             <div class="edu-line">
               <span class="mono">$ cat education.txt</span><br>
@@ -554,7 +577,8 @@
           <!-- Lenovo -->
           <div class="job reveal">
             <div class="job-date">Summer 2026</div>
-            <h3><span class="co">Lenovo</span> <span class="role">— Network Automation Engineer Intern</span></h3>
+            <h3><span class="co"><a href="https://www.lenovo.com/us/en/servers-storage/" target="_blank"
+                  rel="noopener">Lenovo</a></span> <span class="role">— Network Automation Engineer Intern</span></h3>
             <div class="loc">Morrisville, NC · Infrastructure Solutions Group — AI cluster design &amp; verification</div>
             <ul>
               <li>Sole owner of an internal Python pipeline that converts <b>AI compute-cluster network designs into
@@ -580,8 +604,8 @@
           <!-- JPC -->
           <div class="job reveal">
             <div class="job-date">May 2025 — Aug 2025</div>
-            <h3><span class="co">JPC — Jess-Link Products Connectivity</span> <span class="role">— AI Engineer
-                Intern</span></h3>
+            <h3><span class="co"><a href="https://www.jpcco.com/" target="_blank" rel="noopener">JPC — Jess-Link
+                  Products Connectivity</a></span> <span class="role">— AI Engineer Intern</span></h3>
             <div class="loc">Taipei, Taiwan</div>
             <ul>
               <li><b>Proposed and built a RAG document-search system</b> (LangChain + ChromaDB + Ollama, fully
@@ -604,7 +628,8 @@
           <!-- Micromouse -->
           <div class="job reveal">
             <div class="job-date">2024 — Present</div>
-            <h3><span class="co">iRobotics (Micromouse)</span> <span class="role">— Electrical Team Lead</span></h3>
+            <h3><span class="co"><a href="http://micromouseusa.com/?page_id=23" target="_blank"
+                  rel="noopener">iRobotics (Micromouse)</a></span> <span class="role">— Electrical Team Lead</span></h3>
             <div class="loc">University of Illinois Urbana-Champaign</div>
             <ul>
               <li>Lead the electrical team building an autonomous maze-solving robot: schematic and PCB design,
@@ -638,7 +663,8 @@
           <!-- Solar Car -->
           <div class="job reveal past">
             <div class="job-date">2023 — Present</div>
-            <h3><span class="co">Illini Solar Car</span> <span class="role">— Electrical Engineer</span></h3>
+            <h3><span class="co"><a href="https://www.illinisolarcar.com/" target="_blank" rel="noopener">Illini
+                  Solar Car</a></span> <span class="role">— Electrical Engineer</span></h3>
             <div class="loc">University of Illinois Urbana-Champaign</div>
             <ul>
               <li>Built and tested circuits for <b>Calypso</b>, a road-going solar-powered race car; designed an
@@ -656,7 +682,8 @@
           <div class="earlier-grid">
             <div class="mini-job">
               <div class="mj-head">
-                <h4>Byte-Sized Coders — Cofounder &amp; VP</h4>
+                <h4><a href="https://www.instagram.com/fhjh.bytesizedcoders/" target="_blank"
+                    rel="noopener">Byte-Sized Coders</a> — Cofounder &amp; VP</h4>
                 <span class="mj-date">2018 — 2023 · Taipei</span>
               </div>
               <p>Founded a coding-education club with 30+ active students. Wrote and taught a year-long Python
@@ -757,6 +784,58 @@
           </div>
         </div>
 
+        <!-- Featured 2: Hoop AI -->
+        <div class="featured founder reveal">
+          <div>
+            <span class="feat-tag">★ founder project — pre-launch</span>
+            <h3>Hoop AI — Every make. Every miss. Counted.</h3>
+            <p class="desc">
+              Prop a phone on the sideline, shoot your session, and <b>on-device computer vision counts every
+                shot</b> — no wearables, no sensors, no hardware. Trained where people actually play: outdoor
+              asphalt, chain nets, no nets, bad light. I own the whole thing — YOLOv8 vision model, training data,
+              the trilingual landing site, and the Supabase/Vercel signup backend.
+            </p>
+            <div class="proof">
+              <span class="chip">~90% shot detection on real courts</span>
+              <span class="chip">Android + iOS</span>
+              <span class="chip">live in EN / 繁中 / 简中</span>
+            </div>
+            <a class="feat-cta" href="https://hoop-ai-landing.vercel.app/en" target="_blank" rel="noopener">→
+              watch the demo / reserve a spot</a>
+            <p class="feat-note">// built solo: CV model + mobile pipeline + landing page + payments-free waitlist</p>
+          </div>
+          <div class="feat-diagram" aria-hidden="true">
+            <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+              <!-- court line -->
+              <line x1="10" y1="250" x2="410" y2="250" stroke="#2a3648" stroke-width="1.5"/>
+              <!-- phone on sideline -->
+              <rect x="30" y="200" width="26" height="46" rx="5" fill="#121924" stroke="#ffc857" stroke-width="1.4" transform="rotate(-12 43 223)"/>
+              <circle cx="43" cy="212" r="2.5" fill="#ffc857" transform="rotate(-12 43 223)"/>
+              <text x="43" y="272" fill="#5c6b80" font-size="10" text-anchor="middle">phone</text>
+              <!-- shot arc -->
+              <path d="M120 240 Q 240 60 352 178" fill="none" stroke="#ffc857" stroke-width="1.8" stroke-dasharray="6 5">
+                <animate attributeName="stroke-dashoffset" from="44" to="0" dur="1.8s" repeatCount="indefinite"/>
+              </path>
+              <!-- ball -->
+              <circle cx="120" cy="240" r="7" fill="none" stroke="#ffc857" stroke-width="1.6"/>
+              <!-- backboard + rim -->
+              <line x1="374" y1="130" x2="374" y2="196" stroke="#8b9bb0" stroke-width="2.5"/>
+              <line x1="344" y1="182" x2="374" y2="182" stroke="#57e6a9" stroke-width="2.5"/>
+              <path d="M348 184 L352 206 L368 206 L372 184" fill="none" stroke="#2a3648" stroke-width="1.2"/>
+              <line x1="374" y1="196" x2="374" y2="250" stroke="#8b9bb0" stroke-width="2"/>
+              <text x="360" y="272" fill="#5c6b80" font-size="10" text-anchor="middle">rim</text>
+              <!-- detection box around ball flight -->
+              <rect x="205" y="95" width="70" height="52" fill="none" stroke="#57e6a9" stroke-width="1.1" stroke-dasharray="4 3"/>
+              <text x="240" y="88" fill="#57e6a9" font-size="10" text-anchor="middle">ball 0.97</text>
+              <!-- scoreboard -->
+              <rect x="22" y="20" width="150" height="58" rx="8" fill="rgba(87,230,169,0.05)" stroke="#1e2836" stroke-width="1.2"/>
+              <text x="36" y="44" fill="#57e6a9" font-size="12">MAKES   7 ✓</text>
+              <text x="36" y="64" fill="#8b9bb0" font-size="12">MISSES  3 ✗</text>
+              <text x="240" y="30" fill="#5c6b80" font-size="10.5" text-anchor="middle">no sensors · no subscription</text>
+            </svg>
+          </div>
+        </div>
+
         <div class="proj-grid">
           <div class="proj reveal">
             <div class="proj-top">
@@ -782,9 +861,10 @@
 
           <div class="proj reveal">
             <div class="proj-top">
-              <span class="proj-folder">~/audio/ai-pedal</span>
+              <span class="proj-folder">~/audio/zoom-gx1-tone-ai</span>
               <div class="proj-links">
-                <a href="https://github.com/Skyler-create" target="_blank" rel="noopener" aria-label="GitHub profile">
+                <a href="https://github.com/Skyler-create/ZoomGX1_AI_Tone_Generator" target="_blank" rel="noopener"
+                  aria-label="View source on GitHub">
                   <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
                 </a>
               </div>
@@ -851,12 +931,22 @@
 
         <div class="beyond-grid">
           <div class="beyond-card reveal">
+            <div class="b-icon">🏊</div>
+            <h4>I've finished a half-Ironman</h4>
+            <p>113 kilometers: 1.9 km swim, 90 km bike, 21.1 km run. Months of training for one race day taught me
+              the skill I use most in engineering — showing up every day for a goal that's still months away.
+              Race day is just the deploy.</p>
+            <span class="stat">70.3 finisher · 1.9 swim / 90 bike / 21.1 run (km)</span>
+          </div>
+          <div class="beyond-card reveal">
             <div class="b-icon">🏀</div>
-            <h4>I teach basketball to 1,500+ students</h4>
-            <p>I published a full basketball fundamentals course on Udemy — shooting, footwork, ball-handling,
-              strategy. I coach shooting form the way I debug circuits: isolate one variable, change one thing,
-              measure again.</p>
-            <span class="stat">1,500+ students · 4.4★ average rating</span>
+            <h4>I teach — code, and jump shots</h4>
+            <p>I cofounded a coding club in Taipei and taught a year-long Python curriculum to 30+ students, ran
+              Scratch camps at underprivileged elementary schools, and published a basketball course that 1,500+
+              strangers on the internet took and rated 4.4★. If I can explain a closeout to a 12-year-old, I can
+              explain a design review to anyone.</p>
+            <span class="stat"><a href="https://www.udemy.com/user/skyler-lang/" target="_blank"
+                rel="noopener">1,500+ students on Udemy · 4.4★</a></span>
           </div>
           <div class="beyond-card reveal">
             <div class="b-icon">🎸</div>
@@ -865,6 +955,14 @@
               pedals. Now my signal chain is increasingly things I soldered myself — which means when it hums,
               it's personal.</p>
             <span class="stat">analog + digital + ML, all in one signal chain</span>
+          </div>
+          <div class="beyond-card reveal">
+            <div class="b-icon">🌏</div>
+            <h4>Taipei ⇄ Urbana-Champaign</h4>
+            <p>I grew up in Taipei and study in Illinois, so I default to building for more than one audience —
+              Hoop AI launches in English, 繁體中文, and 简体中文 on day one. Comfortable being the bridge between
+              teams, languages, and time zones.</p>
+            <span class="stat">bilingual · products ship in three scripts</span>
           </div>
         </div>
       </div>
@@ -903,7 +1001,7 @@
   <script>
     /* ---------- typed line ---------- */
     (function () {
-      var words = ["network_automation", "embedded_systems", "applied_ml", "fpga_design", "guitar_pedals.ko"];
+      var words = ["network_automation", "hoop_ai", "embedded_systems", "applied_ml", "fpga_design", "guitar_pedals.ko"];
       var el = document.getElementById("typed");
       if (!el) return;
       if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
