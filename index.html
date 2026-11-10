@@ -462,9 +462,9 @@
             aria-hidden="true"></span></p>
 
         <p class="hero-sub">
-          This past year I built <b>digital twins of AI compute clusters</b> at Lenovo, shipped
-          <b>computer vision to a live factory floor</b> in Taipei — and now I'm launching
-          <a href="https://hoop-ai-landing.vercel.app/en" target="_blank" rel="noopener"><b>Hoop AI</b></a>, my own
+          This past year I built <b>digital twins of AI compute clusters</b> at Lenovo and put
+          <b>computer vision on a live factory line</b> in Taiwan. Now I'm building
+          <a href="https://arcvisionai.com" target="_blank" rel="noopener"><b>ArcVision AI</b></a>, my own
           computer-vision shot tracker. Consider this my digital handshake — firm, no sweaty palms.
         </p>
 
@@ -505,16 +505,17 @@
             <p>
               I'm a <b>Computer Engineering student at the University of Illinois Urbana-Champaign</b> who likes
               working at the boundaries — where a Python script has to convince a switch to route packets, where a
-              neural net has to fit on an edge device bolted to a factory line, where an analog circuit has to
+              vision model has to catch a bad solder joint on a factory line, where an analog circuit has to
               sound good through a guitar amp.
             </p>
             <p>
-              My favorite kind of problem is the one nobody has scoped yet. At <b>Lenovo</b> I inherited a
-              half-finished internal tool from an engineer who had left the company, and turned it into a working
-              pipeline that spins up virtual copies of entire AI datacenter networks. At <b>JPC in Taipei</b>, I
-              pitched two AI systems that didn't exist before I proposed them — then built both. Now I'm doing it
-              for myself: <a href="https://hoop-ai-landing.vercel.app/en" target="_blank" rel="noopener"><b>Hoop
-                  AI</b></a>, my computer-vision shot tracker, is live for pre-launch reservations.
+              My favorite kind of problem is the one nobody has scoped yet. At <b>Lenovo</b> I walked in with no
+              networking background, inherited topology code from an engineer who had left the company, and was
+              asked for a proof of concept. I delivered a complete tool that boots scaled-down virtual copies of
+              AI cluster networks. At <b>JPC in Taiwan</b>, I proposed the company's first AI inspection system,
+              built it, and it stayed on the production line after I left. Now I'm doing it for myself with
+              <a href="https://arcvisionai.com" target="_blank" rel="noopener"><b>ArcVision AI</b></a>, my
+              computer-vision basketball shot tracker.
             </p>
             <p>
               I care about <b>proof over polish</b>: LLDP tables, converged BGP sessions, TTL-verified pings,
@@ -525,9 +526,9 @@
             <div class="edu-line">
               <span class="mono">$ cat education.txt</span><br>
               <span class="deg">B.S. Computer Engineering</span> — University of Illinois Urbana-Champaign,
-              expected 2027<br>
-              Coursework: Computer Systems &amp; Programming, Digital Systems Lab, Data Structures &amp; Algorithms,
-              Signal Processing, Robotics
+              expected May 2027<br>
+              Coursework: Operating Systems, Distributed Systems, Algorithms, Artificial Intelligence,
+              Digital Systems Lab
             </div>
           </div>
 
@@ -541,23 +542,23 @@
           <div class="pillar reveal">
             <div class="p-icon">[01] networks &amp; infra</div>
             <h3>Network Automation</h3>
-            <p>Digital twins of datacenter fabrics, BGP/FRR config generation, topology verification, and
-              infrastructure-as-code.</p>
-            <div class="tools">Python · containerlab · SONiC · FRR · BGP · NetBox · Docker · Linux</div>
+            <p>Digital twins of datacenter fabrics, eBGP and addressing design, config generation, and layered
+              verification from wiring up to live traffic.</p>
+            <div class="tools">Python · containerlab · SONiC · BGP · NetBox · Django · Docker · Linux</div>
           </div>
           <div class="pillar reveal">
             <div class="p-icon">[02] embedded &amp; hardware</div>
             <h3>Embedded Systems</h3>
-            <p>PCB design through firmware: microcontrollers, FPGAs, motor control, sensor integration, and
+            <p>PCB design through firmware: device drivers, microcontrollers, FPGAs, motor control, and
               debugging with real test equipment.</p>
-            <div class="tools">C/C++ · SystemVerilog · KiCad · Vivado · Arduino · STM32 · SPI · LTspice</div>
+            <div class="tools">C · SystemVerilog · RISC-V · KiCad · Vivado · Arduino · ESP32 · SPI · UART</div>
           </div>
           <div class="pillar reveal">
             <div class="p-icon">[03] applied ml</div>
             <h3>Applied ML</h3>
-            <p>ML that ships: RAG systems on private data, real-time vision on edge devices, and audio DSP
-              models — deployed, not just demoed.</p>
-            <div class="tools">PyTorch · YOLO · Mask R-CNN · LangChain · ChromaDB · Ollama · OpenCV</div>
+            <p>ML that ships: YOLO detectors trained on data I collected and labeled, vision pipelines debugged
+              end to end, and RAG over private documents.</p>
+            <div class="tools">PyTorch · YOLO · OpenCV · Roboflow · LangChain · ChromaDB · Ollama</div>
           </div>
         </div>
       </div>
@@ -576,28 +577,30 @@
         <div class="timeline">
           <!-- Lenovo -->
           <div class="job reveal">
-            <div class="job-date">Summer 2026</div>
+            <div class="job-date">Jun 2026 — Jul 2026</div>
             <h3><span class="co"><a href="https://www.lenovo.com/us/en/servers-storage/" target="_blank"
                   rel="noopener">Lenovo</a></span> <span class="role">— Network Automation Intern</span></h3>
-            <div class="loc">Morrisville, NC · Infrastructure Solutions Group — AI cluster design &amp; verification</div>
+            <div class="loc">Morrisville, NC · AI cluster design &amp; verification</div>
             <ul>
-              <li>Sole owner of an internal Python pipeline that converts <b>AI compute-cluster network designs into
-                  deployable containerlab digital twins</b> — virtual SONiC switch fabrics that let engineers validate
-                a cluster's entire control plane before a single piece of hardware is purchased.</li>
-              <li>Automated the full routing layer: <b>numbered eBGP over FRR</b> with structured 4-byte ASN
-                assignment, surgical <span class="mono">config_db</span> patching on SONiC, and automatic server
-                addressing — <b>zero manual configuration</b> from design file to converged fabric.</li>
-              <li>Proved end-to-end correctness on <b>all four routable fabrics</b> (GPU backend, frontend, and two
-                storage networks): LLDP topology verification, BGP session establishment, and real server-to-server
-                traffic confirmed by TTL-decrement analysis across leaf→core→leaf paths.</li>
-              <li>Inherited legacy topology code from a departed engineer with <b>full design authority</b>; made and
-                documented the core fidelity decision (structural fidelity over proportional scale-down, after proving
-                exact proportional shrink mathematically impossible for real designs).</li>
+              <li>Built a Python tool that converts <b>AI-cluster network designs into deployable containerlab
+                  digital twins</b> running virtual SONiC switches — about <b>5 minutes</b> from a design to a
+                fully routed, traffic-passing fabric, with one command.</li>
+              <li>Designed <b>numbered eBGP across five networks</b> with a 4-byte ASN scheme keyed on switch
+                identity, plus a position-encoded /31 IP allocator that is the single source of truth for both
+                config patching and routing.</li>
+              <li>Cut fabric configuration time <b>75% (8 → 2 min)</b> with a bounded thread pool, and added a
+                byte-identical dry-run gate that caught a real regression on its first run.</li>
+              <li>Built <b>four-layer verification</b> (LLDP wiring, BGP session state, route tables, TTL-checked
+                server-to-server ping) that exposed a dead core tier a healthy-looking deploy had missed.</li>
+              <li>Inherited the upstream topology code with <b>full design authority</b>: proved exact
+                proportional scale-down is impossible for real designs and built a structural-fidelity
+                scale-down instead, root-caused 7 design-tool bugs with file/line citations, fixed 4+, and
+                finished the tool's incomplete actualization module.</li>
             </ul>
             <div class="chips">
               <span class="chip">Python</span><span class="chip">containerlab</span><span class="chip">SONiC</span>
-              <span class="chip">FRR / BGP</span><span class="chip">NetBox</span><span class="chip">Docker</span>
-              <span class="chip">Linux</span><span class="chip">GitLab</span>
+              <span class="chip">BGP</span><span class="chip">NetBox</span><span class="chip">Django</span>
+              <span class="chip">Docker</span><span class="chip">Linux</span><span class="chip">GitLab</span>
             </div>
           </div>
 
@@ -605,74 +608,54 @@
           <div class="job reveal">
             <div class="job-date">Jun 2025 — Aug 2025</div>
             <h3><span class="co"><a href="https://www.jpcco.com/" target="_blank" rel="noopener">JPC — Jess-Link
-                  Products Connectivity</a></span> <span class="role">— AI Engineer Intern</span></h3>
-            <div class="loc">Taipei, Taiwan</div>
+                  Products</a></span> <span class="role">— AI Engineer Intern</span></h3>
+            <div class="loc">Taiwan</div>
             <ul>
-              <li><b>Proposed and built a RAG document-search system</b> (LangChain + ChromaDB + Ollama, fully
-                on-prem) so engineers could query proprietary engineering documents in natural language — cut average
-                search time by <b>over 50%</b>.</li>
-              <li><b>Initiated an AI defect-detection pipeline</b> using YOLO and Mask R-CNN, optimized for the
-                NVIDIA Jetson Orin NX and integrated with factory systems for real-time quality control on the
-                production line.</li>
-              <li>Both projects were self-pitched: identified the problem, made the case to management, and delivered
-                working systems within one summer.</li>
+              <li><b>Proposed and built the company's first AI optical-inspection system</b>: a YOLO detector,
+                trained on images I labeled myself, that flags insufficient-solder joints before UV cure, while
+                rework is still possible. It reached <b>99% mAP@0.5</b>.</li>
+              <li>Ran it on a GPU workstation at the assembly line, where it <b>stayed in production after the
+                  internship</b> and was extended to PCB defect inspection.</li>
+              <li>Built a <b>RAG tool</b> (LangChain, ChromaDB, Ollama) over spec sheets and datasheets so
+                engineers could query part specs in plain English.</li>
+              <li>Joined as a signal-integrity intern: fixtured cables and connectors for SI test runs, and
+                learned CST Studio and Cadence Allegro along the way.</li>
             </ul>
             <div class="chips">
-              <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">LangChain</span>
-              <span class="chip">ChromaDB</span><span class="chip">Ollama</span><span class="chip">YOLO</span>
-              <span class="chip">Mask R-CNN</span><span class="chip">Jetson Orin NX</span><span class="chip">OpenCV</span>
-              <span class="chip">REST APIs</span>
+              <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">YOLO</span>
+              <span class="chip">Roboflow</span><span class="chip">OpenCV</span><span class="chip">LangChain</span>
+              <span class="chip">ChromaDB</span><span class="chip">Ollama</span>
             </div>
           </div>
 
           <!-- Micromouse -->
           <div class="job reveal">
-            <div class="job-date">2024 — Present</div>
+            <div class="job-date">2024 — 2025</div>
             <h3><span class="co"><a href="http://micromouseusa.com/?page_id=23" target="_blank"
-                  rel="noopener">iRobotics (Micromouse)</a></span> <span class="role">— Electrical Team Lead</span></h3>
+                  rel="noopener">iRobotics (Micromouse)</a></span> <span class="role">— Hardware &amp; Firmware</span></h3>
             <div class="loc">University of Illinois Urbana-Champaign</div>
             <ul>
-              <li>Lead the electrical team building an autonomous maze-solving robot: schematic and PCB design,
-                sensor interfacing, power management, and PID-controlled motors.</li>
-              <li>Contributed a modified <b>flood-fill pathfinding algorithm</b> that maps unknown mazes and computes
-                the fastest escape path under real hardware constraints.</li>
+              <li>Designed most of the hardware for an autonomous maze-solving robot, soldered the board, and
+                wrote the Raspberry Pi firmware, including motor control.</li>
             </ul>
             <div class="chips">
-              <span class="chip">Arduino Nano</span><span class="chip">C++</span><span class="chip">PID control</span>
-              <span class="chip">SPI</span><span class="chip">KiCad</span><span class="chip">IR sensors</span>
+              <span class="chip">Raspberry Pi</span><span class="chip">firmware</span>
+              <span class="chip">motor control</span><span class="chip">PCB design</span>
+              <span class="chip">soldering</span>
             </div>
           </div>
 
           <!-- eFold -->
-          <div class="job reveal">
-            <div class="job-date">2024 — Present</div>
-            <h3><span class="co">eFold</span> <span class="role">— Embedded Systems Engineer</span></h3>
-            <div class="loc">University of Illinois Urbana-Champaign</div>
-            <ul>
-              <li>Student-led team building a modular electric skateboard from scratch — motor control (VESC),
-                battery management, and regenerative braking.</li>
-              <li>Modified VESC hardware and firmware to support a 12S2P battery pack, <b>improving battery life by
-                  17%</b> via MOSFET and voltage-divider redesigns for safe high-voltage operation.</li>
-            </ul>
-            <div class="chips">
-              <span class="chip">VESC</span><span class="chip">BLDC motors</span><span class="chip">BMS</span>
-              <span class="chip">STM32</span><span class="chip">firmware</span><span class="chip">MATLAB</span>
-            </div>
-          </div>
-
-          <!-- Solar Car -->
           <div class="job reveal past">
-            <div class="job-date">2023 — Present</div>
-            <h3><span class="co"><a href="https://www.illinisolarcar.com/" target="_blank" rel="noopener">Illini
-                  Solar Car</a></span> <span class="role">— Electrical Engineer</span></h3>
+            <div class="job-date">2024 — 2025</div>
+            <h3><span class="co">eFold</span> <span class="role">— Electrical Engineer</span></h3>
             <div class="loc">University of Illinois Urbana-Champaign</div>
             <ul>
-              <li>Built and tested circuits for <b>Calypso</b>, a road-going solar-powered race car; designed an
-                improved braking sensor using a custom string potentiometer for finer control accuracy.</li>
+              <li>Student-led team building an electric skateboard from scratch. Redrew the battery management
+                system to support a 12S2P pack.</li>
             </ul>
             <div class="chips">
-              <span class="chip">KiCad</span><span class="chip">PCB testing</span><span class="chip">soldering</span>
-              <span class="chip">oscilloscope</span>
+              <span class="chip">BMS</span><span class="chip">12S2P pack</span><span class="chip">hardware design</span>
             </div>
           </div>
         </div>
@@ -684,10 +667,10 @@
               <div class="mj-head">
                 <h4><a href="https://www.instagram.com/fhjh.bytesizedcoders/" target="_blank"
                     rel="noopener">Byte-Sized Coders</a> — Cofounder &amp; VP</h4>
-                <span class="mj-date">2018 — 2023 · Taipei</span>
+                <span class="mj-date">2019 — 2023 · Taipei</span>
               </div>
-              <p>Founded a coding-education club with 30+ active students. Wrote and taught a year-long Python
-                curriculum, and ran Scratch summer camps at underprivileged elementary schools.</p>
+              <p>Cofounded a coding-education club. Designed and taught a year-long Python and algorithms
+                curriculum to about 30 students, and ran Scratch summer camps at underprivileged elementary schools.</p>
             </div>
             <div class="mini-job">
               <div class="mj-head">
@@ -718,17 +701,17 @@
             <span class="feat-tag">★ flagship — built at Lenovo</span>
             <h3>AI Cluster Digital Twin Pipeline</h3>
             <p class="desc">
-              A Python pipeline that takes a <b>paper design of an AI datacenter network</b> — hundreds of switches,
-              five separate fabrics — and boots a faithful, scaled-down <b>virtual replica</b> of it in containerlab:
-              real SONiC network operating systems, real BGP converging over FRR, real packets crossing a
-              leaf-spine fabric. Design flaws surface in a lab VM instead of on a customer's loading dock.
+              A Python pipeline that takes the <b>design of an AI cluster network</b> — five separate networks,
+              2-tier and 3-tier — and boots a faithful, scaled-down <b>virtual replica</b> of it in containerlab:
+              virtual SONiC switches, real BGP sessions converging, real packets crossing a leaf-spine fabric.
+              Routing mistakes surface in a lab VM instead of after the hardware shows up.
             </p>
             <div class="proof">
-              <span class="chip">4/4 routable fabrics passing live traffic</span>
-              <span class="chip">0 manual config steps</span>
-              <span class="chip">TTL-verified leaf→core→leaf</span>
+              <span class="chip">design → routed twin in ~5 min</span>
+              <span class="chip">4 networks proven with live traffic</span>
+              <span class="chip">TTL-checked leaf→core→leaf</span>
             </div>
-            <p class="feat-note">// internal tool — code private, whiteboard walkthrough gladly offered in interviews</p>
+            <p class="feat-note">// internal proof of concept — code private, whiteboard walkthrough gladly offered in interviews</p>
           </div>
           <div class="feat-diagram" aria-hidden="true">
             <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
@@ -784,34 +767,36 @@
           </div>
         </div>
 
-        <!-- Featured 2: Hoop AI -->
+        <!-- Featured 2: ArcVision AI -->
         <div class="featured founder reveal">
           <div>
-            <span class="feat-tag">★ founder project — pre-launch</span>
-            <h3>Hoop AI — Every make. Every miss. Counted.</h3>
+            <span class="feat-tag">★ my own project</span>
+            <h3>ArcVision AI — Every make. Every miss. Counted.</h3>
             <p class="desc">
-              Prop a phone on the sideline, shoot your session, and <b>on-device computer vision counts every
-                shot</b> — no wearables, no sensors, no hardware. Trained where people actually play: outdoor
-              asphalt, chain nets, no nets, bad light. I own the whole thing — YOLOv8 vision model, training data,
-              the trilingual landing site, and the Supabase/Vercel signup backend.
+              A computer-vision basketball shot tracker that calls makes and misses from <b>single-camera
+                video</b>. I fine-tuned a 3-class YOLOv8n detector on video I shot and labeled myself, then built
+              the Python/OpenCV pipeline around it: a custom centroid tracker that keeps the ball's identity
+              through occlusion, and a make/miss classifier on its trajectory. When accuracy stalled at 73%, I
+              traced the ceiling to classifier logic and ground-truth errors rather than the detector, and
+              fixed both.
             </p>
             <div class="proof">
-              <span class="chip">~90% shot detection on real courts</span>
-              <span class="chip">Android + iOS</span>
-              <span class="chip">live in EN / 繁中 / 简中</span>
+              <span class="chip">0.982 mAP50 detector</span>
+              <span class="chip">73% → 91% end to end</span>
+              <span class="chip">~99% on a 40-shot multi-angle set</span>
             </div>
-            <a class="feat-cta" href="https://hoop-ai-landing.vercel.app/en" target="_blank" rel="noopener">→
-              watch the demo / reserve a spot</a>
-            <p class="feat-note">// built solo: CV model + mobile pipeline + landing page + payments-free waitlist</p>
+            <a class="feat-cta" href="https://arcvisionai.com" target="_blank" rel="noopener">→
+              arcvisionai.com</a>
+            <p class="feat-note">// built solo: training data + detector + tracking pipeline + landing page in EN / 繁中 / 简中</p>
           </div>
           <div class="feat-diagram" aria-hidden="true">
             <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
               <!-- court line -->
               <line x1="10" y1="250" x2="410" y2="250" stroke="#2a3648" stroke-width="1.5"/>
-              <!-- phone on sideline -->
+              <!-- camera on sideline -->
               <rect x="30" y="200" width="26" height="46" rx="5" fill="#121924" stroke="#ffc857" stroke-width="1.4" transform="rotate(-12 43 223)"/>
               <circle cx="43" cy="212" r="2.5" fill="#ffc857" transform="rotate(-12 43 223)"/>
-              <text x="43" y="272" fill="#5c6b80" font-size="10" text-anchor="middle">phone</text>
+              <text x="43" y="272" fill="#5c6b80" font-size="10" text-anchor="middle">camera</text>
               <!-- shot arc -->
               <path d="M120 240 Q 240 60 352 178" fill="none" stroke="#ffc857" stroke-width="1.8" stroke-dasharray="6 5">
                 <animate attributeName="stroke-dashoffset" from="44" to="0" dur="1.8s" repeatCount="indefinite"/>
@@ -831,7 +816,7 @@
               <rect x="22" y="20" width="150" height="58" rx="8" fill="rgba(87,230,169,0.05)" stroke="#1e2836" stroke-width="1.2"/>
               <text x="36" y="44" fill="#57e6a9" font-size="12">MAKES   7 ✓</text>
               <text x="36" y="64" fill="#8b9bb0" font-size="12">MISSES  3 ✗</text>
-              <text x="240" y="30" fill="#5c6b80" font-size="10.5" text-anchor="middle">no sensors · no subscription</text>
+              <text x="240" y="30" fill="#5c6b80" font-size="10.5" text-anchor="middle">one camera · no sensors</text>
             </svg>
           </div>
         </div>
@@ -839,43 +824,55 @@
         <div class="proj-grid">
           <div class="proj reveal">
             <div class="proj-top">
+              <span class="proj-folder">~/lifeos</span>
+            </div>
+            <h4>lifeOS — Personal Automation Platform</h4>
+            <p>A mobile PWA that runs most of my day: a morning brief and evening reflection, two-way calendar
+              sync, DNS-level screen-time gating, and an in-database job scraper with a resume-tailoring
+              pipeline. Supabase/Postgres underneath, with an LLM planning layer on top.</p>
+            <div class="win">→ ~40 SQL functions, edge functions, pg_cron, RLS</div>
+            <div class="tools">Supabase · PostgreSQL · JavaScript · LLMs</div>
+          </div>
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/ece391/riscv-os</span>
+            </div>
+            <h4>RISC-V Operating System</h4>
+            <p>Completed a full operating system for RISC-V in C for ECE 391, including the VirtIO block device
+              drivers, the virtual-memory subsystem, and fixes for filesystem concurrency bugs.</p>
+            <div class="win">→ kernel code that boots, pages, and reads disk</div>
+            <div class="tools">C · RISC-V · VirtIO · virtual memory · GDB</div>
+          </div>
+          <div class="proj reveal">
+            <div class="proj-top">
+              <span class="proj-folder">~/jpc/solder-inspect</span>
+            </div>
+            <h4>Solder-Defect Inspection</h4>
+            <p>JPC's first AI optical-inspection system: a YOLO detector trained on self-labeled images that flags
+              insufficient-solder joints on cable assemblies before UV cure, while rework is still possible.</p>
+            <div class="win">→ 99% mAP@0.5, adopted on the production line</div>
+            <div class="tools">PyTorch · YOLO · Roboflow · OpenCV</div>
+          </div>
+          <div class="proj reveal">
+            <div class="proj-top">
               <span class="proj-folder">~/jpc/rag-search</span>
             </div>
-            <h4>Engineering-Docs RAG Search</h4>
-            <p>On-prem retrieval-augmented search over proprietary engineering documents. Natural-language questions,
-              grounded answers, zero data leaving the building.</p>
-            <div class="win">→ cut doc search time 50%+ at JPC</div>
+            <h4>Spec-Sheet RAG Search</h4>
+            <p>Internal retrieval-augmented search over spec sheets and datasheets, running on local models so
+              engineers could ask about part specs in plain English.</p>
+            <div class="win">→ natural-language answers from private docs</div>
             <div class="tools">LangChain · ChromaDB · Ollama · Python</div>
           </div>
-
           <div class="proj reveal">
             <div class="proj-top">
-              <span class="proj-folder">~/jpc/defect-detect</span>
+              <span class="proj-folder">~/ece470/ur3-arm</span>
             </div>
-            <h4>Real-Time Defect Detection</h4>
-            <p>Vision pipeline spotting product defects on a live production line — YOLO for detection, Mask R-CNN
-              for segmentation, squeezed onto a Jetson Orin NX at the edge.</p>
-            <div class="win">→ integrated with live factory QC systems</div>
-            <div class="tools">PyTorch · YOLO · Mask R-CNN · OpenCV · Jetson</div>
+            <h4>Robotic Arm Control</h4>
+            <p>Python control software for a UR3 robotic arm: forward and inverse kinematics, path planning, and
+              camera-based block pick-and-place.</p>
+            <div class="win">→ sees a block, plans a path, picks it up</div>
+            <div class="tools">Python · kinematics · path planning · UR3</div>
           </div>
-
-          <div class="proj reveal">
-            <div class="proj-top">
-              <span class="proj-folder">~/audio/zoom-gx1-tone-ai</span>
-              <div class="proj-links">
-                <a href="https://github.com/Skyler-create/ZoomGX1_AI_Tone_Generator" target="_blank" rel="noopener"
-                  aria-label="View source on GitHub">
-                  <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-                </a>
-              </div>
-            </div>
-            <h4>AI Guitar Effects Pedal</h4>
-            <p>A pedal that listens to a reference guitar tone and replicates it — MFCC + OpenL3 embeddings feed a
-              CNN that identifies the effect and estimates the knob settings, live on a Raspberry Pi.</p>
-            <div class="win">→ real-time tone matching from audio alone</div>
-            <div class="tools">Python · CNN · OpenL3 · MFCC · Raspberry Pi · DSP</div>
-          </div>
-
           <div class="proj reveal">
             <div class="proj-top">
               <span class="proj-folder">~/fpga/sd-reader</span>
@@ -892,19 +889,17 @@
             <div class="win">→ pure SystemVerilog, cycle-accurate</div>
             <div class="tools">SystemVerilog · Vivado · SPI · BRAM · HDMI/VGA</div>
           </div>
-
           <div class="proj reveal">
             <div class="proj-top">
               <span class="proj-folder">~/audio/wireless-guitar</span>
             </div>
             <h4>Wireless Guitar System</h4>
-            <p>RF transmitter/receiver pair replacing a guitar cable: ~10 ms ADC latency (MCP3008), low-noise
-              NE5534 amplification, custom PCB — prototyped on breadboard, verified on oscilloscope, laid out
-              in KiCad.</p>
-            <div class="win">→ plug-and-play, playable latency</div>
-            <div class="tools">RF · ADC/DAC · Arduino · LTspice · KiCad · PCB</div>
+            <p>The analog front end and digitization chain for a wireless guitar link: NE5534 low-noise preamp and
+              an MCP3008 ADC over SPI into an ATmega328. Prototyped on breadboard, validated on an
+              oscilloscope, then laid out as a schematic and PCB in KiCad.</p>
+            <div class="win">→ front end validated on the bench</div>
+            <div class="tools">NE5534 · MCP3008 · SPI · ATmega328 · KiCad</div>
           </div>
-
           <div class="proj reveal">
             <div class="proj-top">
               <span class="proj-folder">~/audio/distortion-pedal</span>
@@ -912,7 +907,7 @@
             <h4>Analog Distortion Pedal</h4>
             <p>Fully analog distortion from first principles: op-amp gain staging, selectable clipping diodes
               (LED / germanium / Schottky — each clips differently), and a tuned tone stack.</p>
-            <div class="win">→ designed, built, and gigged with</div>
+            <div class="win">→ designed, laid out, assembled, and it works</div>
             <div class="tools">TL072 · clipping diodes · tone stack · KiCad</div>
           </div>
         </div>
@@ -941,7 +936,7 @@
           <div class="beyond-card reveal">
             <div class="b-icon">🏀</div>
             <h4>I teach — code, and jump shots</h4>
-            <p>I cofounded a coding club in Taipei and taught a year-long Python curriculum to 30+ students, ran
+            <p>I cofounded a coding club in Taipei and taught a year-long Python curriculum to about 30 students, ran
               Scratch camps at underprivileged elementary schools, and published a basketball course that 1,500+
               strangers on the internet took and rated 4.4★. If I can explain a closeout to a 12-year-old, I can
               explain a design review to anyone.</p>
@@ -951,16 +946,16 @@
           <div class="beyond-card reveal">
             <div class="b-icon">🎸</div>
             <h4>I build the gear I play through</h4>
-            <p>Three of the projects above exist because I play guitar and got curious about what was inside my
+            <p>Two of the projects above exist because I play guitar and got curious about what was inside my
               pedals. Now my signal chain is increasingly things I soldered myself — which means when it hums,
               it's personal.</p>
-            <span class="stat">analog + digital + ML, all in one signal chain</span>
+            <span class="stat">analog + digital, all in one signal chain</span>
           </div>
           <div class="beyond-card reveal">
             <div class="b-icon">🌏</div>
             <h4>Taipei ⇄ Urbana-Champaign</h4>
             <p>I grew up in Taipei and study in Illinois, so I default to building for more than one audience —
-              Hoop AI launches in English, 繁體中文, and 简体中文 on day one. Comfortable being the bridge between
+              the ArcVision AI site is live in English, 繁體中文, and 简体中文. Comfortable being the bridge between
               teams, languages, and time zones.</p>
             <span class="stat">bilingual · products ship in three scripts</span>
           </div>
@@ -1001,7 +996,7 @@
   <script>
     /* ---------- typed line ---------- */
     (function () {
-      var words = ["network_automation", "hoop_ai", "embedded_systems", "applied_ml", "fpga_design", "guitar_pedals.ko"];
+      var words = ["network_automation", "arcvision_ai", "embedded_systems", "applied_ml", "fpga_design", "guitar_pedals.ko"];
       var el = document.getElementById("typed");
       if (!el) return;
       if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
