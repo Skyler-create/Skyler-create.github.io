@@ -883,11 +883,12 @@
                 </a>
               </div>
             </div>
-            <h4>FPGA Image Pipeline</h4>
-            <p>Reads raw images off a micro-SD card over SPI, stages pixels through BRAM, and drives an HDMI display
-              with a custom VGA controller — a complete image pipeline with <b>no CPU anywhere</b>.</p>
-            <div class="win">→ pure SystemVerilog, cycle-accurate</div>
-            <div class="tools">SystemVerilog · Vivado · SPI · BRAM · HDMI/VGA</div>
+            <h4>FPGA Image Filter Pipeline</h4>
+            <p>ECE 385 final project, built with a partner: the FPGA reads a 320x240, 24-bit image off a micro-SD
+              card and draws it pixel by pixel to a VGA display. I wrote the filters (tint, contrast,
+              grayscale) and the pixel math behind them.</p>
+            <div class="win">→ filters toggle and stack live from the board switches</div>
+            <div class="tools">SystemVerilog · Vivado · SPI · VGA</div>
           </div>
           <div class="proj reveal">
             <div class="proj-top">
@@ -905,10 +906,10 @@
               <span class="proj-folder">~/audio/distortion-pedal</span>
             </div>
             <h4>Analog Distortion Pedal</h4>
-            <p>Fully analog distortion from first principles: op-amp gain staging, selectable clipping diodes
-              (LED / germanium / Schottky — each clips differently), and a tuned tone stack.</p>
-            <div class="win">→ designed, laid out, assembled, and it works</div>
-            <div class="tools">TL072 · clipping diodes · tone stack · KiCad</div>
+            <p>My own analog distortion pedal, start to finish: I drew the schematic, laid out the PCB,
+              soldered it up, and plugged a guitar into it.</p>
+            <div class="win">→ it works, and it sounds good</div>
+            <div class="tools">analog design · schematic · PCB layout · soldering</div>
           </div>
         </div>
       </div>
